@@ -5,6 +5,7 @@
  */
 package cityofaaron;
 
+import byui.cit260.model.ListItem;
 import byui.cit260.model.Location;
 import byui.cit260.model.Player;
 import byui.cit260.model.TeamMember;
@@ -19,15 +20,22 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Player playerOne = new Player();
-        
-       playerOne.setName("Fred");
        
-       String playerOneName = playerOne.getName();
+       //TESTING PLAYER
+       //Creating a object of Player
+       Player playerOne = new Player();
+       // setting values to playerOne attribute 
+       playerOne.setName("Fred");
+       //getting the name
+       String playerOneName = playerOne.getName();     
+       //display the value
+       System.out.println("Name = " + playerOneName);
+       
+       //TESTING TEAMMEMBER
+       //getting the name
        String teamMemberName = TeamMember.memberOne.getName();
        String teamMemberTitle = TeamMember.memberOne.getTitle();
-       
-       System.out.println("Name = " + playerOneName);
+       //display the value
        System.out.println("Team Member: " + teamMemberName + " " + teamMemberTitle);
        
        
@@ -43,6 +51,17 @@ public class CityOfAaron {
        System.out.println("Location description = " + myLocation.getDescription());
        System.out.println("Location symbol = " + myLocation.getSymbol());
        
+       //TESTING LISTITEM
+       //Creating an object
+       ListItem itemOne = new ListItem();
+       
+       // setting values to itemOne attributes
+       itemOne.setName("Wheat");
+       itemOne.setNumber(1);
+       
+       //Displaying the values
+       System.out.println("Item One Name: " + itemOne.getName());
+       System.out.println("Item One Number: " + itemOne.getNumber());
     }
     
 }
