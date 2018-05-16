@@ -5,6 +5,9 @@
  */
 package cityofaaron;
 
+import byui.cit260.model.Player;
+import byui.cit260.model.TeamMember;
+
 /**
  *
  * @author Gianna
@@ -15,7 +18,17 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Player playerOne = new Player();
+        
+       playerOne.setName("Fred");
+       
+       String playerOneName = playerOne.getName();
+       String teamMemberName = TeamMember.memberOne.getName();
+       String teamMemberTitle = TeamMember.memberOne.getTitle();
+       
+       System.out.println("Name = " + playerOneName);
+       System.out.println("Team Member: " + teamMemberName + " " + teamMemberTitle);
+       
     }
     
 }
