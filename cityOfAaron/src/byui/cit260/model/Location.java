@@ -5,11 +5,13 @@
  */
 package byui.cit260.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Hernan
  */
-public class Location {
+public class Location implements Serializable {
     
     private String description;
     private String symbol;
