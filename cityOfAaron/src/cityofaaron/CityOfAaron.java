@@ -5,6 +5,7 @@
  */
 package cityofaaron;
 
+import byui.cit260.model.Location;
 import byui.cit260.model.Player;
 import byui.cit260.model.TeamMember;
 
@@ -28,6 +29,19 @@ public class CityOfAaron {
        
        System.out.println("Name = " + playerOneName);
        System.out.println("Team Member: " + teamMemberName + " " + teamMemberTitle);
+       
+       
+       // TESTING LOCATION CLASS
+       // Creating an object of Location (step 1)
+       Location myLocation = new Location();
+       
+       // setting values to myLocation attributes (step 2)
+       myLocation.setDescription("Home town");
+       myLocation.setSymbol("Lion");
+       
+       // displaying in console the values i just set (step 3)
+       System.out.println("Location description = " + myLocation.getDescription());
+       System.out.println("Location symbol = " + myLocation.getSymbol());
        
     }
     
