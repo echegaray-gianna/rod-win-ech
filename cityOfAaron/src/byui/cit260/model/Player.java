@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author Gianna
  */
-public class Player implements Serializable{
+public class Player implements Serializable {
     private String name;
 
     public Player() {
