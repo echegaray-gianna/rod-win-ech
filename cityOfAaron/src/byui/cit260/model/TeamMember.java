@@ -5,11 +5,14 @@
  */
 package byui.cit260.model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  *
  * @author Gianna
  */
-public enum TeamMember {
+public enum TeamMember implements Serializable {
     
     memberOne("Karly", "Winters"),
     memberTwo("Hernan", "Rodriguez"),
@@ -17,7 +20,8 @@ public enum TeamMember {
     
     private String name;
     private String title;
-
+    private ArrayList<Game> games = new ArrayList<Game>();
+            
     TeamMember(String name, String title) {
       this.name = name;
       this.title = title;
@@ -26,9 +30,16 @@ public enum TeamMember {
     public String getName() {
         return name;
     }
-
     public String getTitle() {
         return title;
+    }
+
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
     }
 
 
