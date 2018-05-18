@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Game implements Serializable{
 
-    private Player player;
+    private Player thePlayer;
     private CropData cropData;
     private ArrayList<ListItem> items = new ArrayList<>();
     
@@ -23,13 +23,14 @@ public class Game implements Serializable{
     }
 
     //Player
-    public Player getPlayer() {
-        return player;
+    public Player getThePlayer() {
+        return thePlayer;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setThePlayer(Player thePlayer) {
+        this.thePlayer = thePlayer;
     }
+   
 
     //CropData
     public CropData getCropData() {
@@ -48,6 +49,8 @@ public class Game implements Serializable{
     public void setItems(ArrayList<ListItem> items) {
         this.items = items;
     }
+
+
     
     
  }

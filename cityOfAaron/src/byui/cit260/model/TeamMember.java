@@ -34,6 +34,7 @@ public enum TeamMember implements Serializable {
         return title;
     }
 
+    //ListItem
     public ArrayList<Game> getGames() {
         return games;
     }
