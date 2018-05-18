@@ -18,8 +18,8 @@ public enum TeamMember implements Serializable {
     memberTwo("Hernan", "Rodriguez"),
     memberThree("Gianna", "Echegaray");
     
-    private String name;
-    private String title;
+    private final String name;
+    private final String title;
     private ArrayList<Game> games = new ArrayList<>();
             
     TeamMember(String name, String title) {
@@ -30,6 +30,7 @@ public enum TeamMember implements Serializable {
     public String getName() {
         return name;
     }
+
     public String getTitle() {
         return title;
     }
