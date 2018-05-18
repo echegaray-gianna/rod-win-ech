@@ -20,7 +20,7 @@ public enum TeamMember implements Serializable {
     
     private String name;
     private String title;
-    private ArrayList<Game> games = new ArrayList<Game>();
+    private ArrayList<Game> games = new ArrayList<>();
             
     TeamMember(String name, String title) {
       this.name = name;

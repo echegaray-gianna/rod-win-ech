@@ -14,21 +14,12 @@ import java.util.ArrayList;
  */
 public class Game implements Serializable{
 
-    private Player thePlayer;
     private Player player;
     private CropData cropData;
-    private ArrayList<ListItem> items = new ArrayList<ListItem>();
+    private ArrayList<ListItem> items = new ArrayList<>();
     
     
     public Game() {
-    }
-
-    public Player getThePlayer() {
-        return thePlayer;
-    }
-
-    public void setThePlayer(Player thePlayer) {
-        this.thePlayer = thePlayer;
     }
 
     //Player
