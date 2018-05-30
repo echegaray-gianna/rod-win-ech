@@ -4,7 +4,7 @@
  * Spring 2018
  * Team Members: Gianna Echegaray, Hernan Rodriguez, Karly Winters
  */
-package cityofaaron;
+package byu.cit260.cityOfAaron;
 
 import byui.cit260.model.*;
 

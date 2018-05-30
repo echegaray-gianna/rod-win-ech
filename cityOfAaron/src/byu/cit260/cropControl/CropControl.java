@@ -2,7 +2,7 @@
 //class contains all of the calculation methods for managing the crops
 //Author: Gianna Echegaray
 //Date last modified: May 2018
-package CropControl;
+package byu.cit260.cropControl;
 
 import byui.cit260.model.CropData;
 import java.util.Random;
