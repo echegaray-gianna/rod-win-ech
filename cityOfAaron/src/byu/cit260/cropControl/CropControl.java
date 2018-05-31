@@ -100,5 +100,26 @@ public class CropControl {
         
         return acresOwned;
     }
+    
+    public static int feedPeople( int bushelsOfGrain, CropData cropData ){
+        
+//      IF ( wheatForPeople < 0) THEN return "Enter a new number"
+        if(bushelsOfGrain < 0)
+            return -1;
+//      IF ( CropData.wheatInStore < wheatForPeople ) THEN return "Enter a new number"
+        int inStore = cropData.getWheatInStore(); 
+        if( inStore < bushelsOfGrain)
+            return -1;
+//      wheatInStorage =  wheatInStorage - bushelsOfGrain
+//      wheatForPeople = wheatForPeople + bushelsOfGrain
+        int wheatForPeople = cropData.getWheatForPeople();        
+        inStore -= bushelsOfGrain;
+        wheatForPeople += bushelsOfGrain;
+        cropData.setWheatInStore(inStore);
+        cropData.setWheatForPeople(wheatForPeople);
+//      RETURN wheatInStorage
+        return inStore;
+    }
+    
      
 }

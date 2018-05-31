@@ -151,5 +151,83 @@ public class CropControlTest {
         int result = CropControl.buyLand(acresToBuy, pricePerAcre, cropData);
         assertEquals(expResult, result);
     }
+
+
+    /**
+     * Test of feedPeople method, of class CropControl.
+     * Test 1
+     */
+    @Test
+    public void testFeedPeople1() {
+        System.out.println("feedPeople - test 1");
+        int bushelsOfGrain = 100;
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(1000);
+        
+        int expResult = 900;
+        int result = CropControl.feedPeople(bushelsOfGrain, cropData);
+        assertEquals(expResult, result);
+    }
+    
+        /**
+     * Test of feedPeople method, of class CropControl.
+     * Test 2
+     */
+    @Test
+    public void testFeedPeople2() {
+        System.out.println("feedPeople - test 2");
+        int bushelsOfGrain = -10;
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(1000);
+        
+        int expResult = -1;
+        int result = CropControl.feedPeople(bushelsOfGrain, cropData);
+        assertEquals(expResult, result);
+    }
+        /**
+     * Test of feedPeople method, of class CropControl.
+     * Test 3
+     */
+    @Test
+    public void testFeedPeople3() {
+        System.out.println("feedPeople - test 3");
+        int bushelsOfGrain = 2000;
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(1000);
+        
+        int expResult = -1;
+        int result = CropControl.feedPeople(bushelsOfGrain, cropData);
+        assertEquals(expResult, result);
+    }
+        /**
+     * Test of feedPeople method, of class CropControl.
+     * Test 4
+     */
+    @Test
+    public void testFeedPeople4() {
+        System.out.println("feedPeople - test 4");
+        int bushelsOfGrain = 0;
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(1000);
+        
+        int expResult = 1000;
+        int result = CropControl.feedPeople(bushelsOfGrain, cropData);
+        assertEquals(expResult, result);
+    }
+        /**
+     * Test of feedPeople method, of class CropControl.
+     * Test 5
+     */
+    @Test
+    public void testFeedPeople5() {
+        System.out.println("feedPeople - test 5");
+        int bushelsOfGrain = 1000;
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(1000);
+        
+        int expResult = 0;
+        int result = CropControl.feedPeople(bushelsOfGrain, cropData);
+        assertEquals(expResult, result);
+    }
     
 }
