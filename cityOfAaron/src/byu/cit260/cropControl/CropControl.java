@@ -60,13 +60,18 @@ public class CropControl {
          return owned;
     }
     
-    /**
-     * 
-     * @param acresToBuy
-     * @param pricePerAcre
-     * @param cropData
-     * @return 
-     */
+ 					
+     //The buyLand method					
+     //Purpose: To buy land					
+     //@param price per acre					
+     //@param the amount  of acres to buy					
+     //@param a reference to the CropData object					
+     //@return the number of acres owned after the purchase					
+     //Pre-Conditions: acres to buy must be positive, 
+     //                 have enough population and 
+     //                 have wnough wheat for the purchase  					
+					
+
     public static int buyLand( int acresToBuy,int pricePerAcre, CropData cropData)
     {
 //      if acresToBuy < 0, THEN RETURN -1
@@ -95,5 +100,5 @@ public class CropControl {
         
         return acresOwned;
     }
-    
+     
 }
