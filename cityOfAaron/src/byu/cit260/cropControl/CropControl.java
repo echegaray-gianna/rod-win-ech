@@ -1,16 +1,13 @@
 //The CropControl class- part of the control layer
 //class contains all of the calculation methods for managing the crops
-//Author: Gianna Echegaray
+//Author: Karly Winters, Hernan Rodriguez, Gianna Echegaray
 //Date last modified: May 2018
+
 package byu.cit260.cropControl;
 
 import byui.cit260.model.CropData;
 import java.util.Random;
 
-/**
- *
- * @author Gianna
- */
 public class CropControl {
     
     

@@ -1,18 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//The CropControl class- part of the control layer
+//class contains all of the calculation methods for managing the crops
+//Author: Karly Winters, Hernan Rodriguez, Gianna Echegaray
+//Date last modified: May 2018
+
 package byu.cit260.cropControl;
 
 import byui.cit260.model.CropData;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author hernan rodriguez
- */
+
 public class CropControlTest {
     
     public CropControlTest() {
