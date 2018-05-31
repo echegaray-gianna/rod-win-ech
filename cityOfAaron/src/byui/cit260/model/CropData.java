@@ -161,5 +161,9 @@ public class CropData implements Serializable {
     public void setWheatForPeople(int wheatForPeople) {
         this.wheatForPeople = wheatForPeople;
     }
+
+    public void setacresOwend(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -214,6 +214,7 @@ public class CropControlTest {
         int result = CropControl.feedPeople(bushelsOfGrain, cropData);
         assertEquals(expResult, result);
     }
+    
         /**
      * Test of feedPeople method, of class CropControl.
      * Test 5
@@ -230,4 +231,128 @@ public class CropControlTest {
         assertEquals(expResult, result);
     }
     
+     /**
+     * Test of PlantCrops method, of class CropControl.
+     * Test 1
+     */
+    
+    @Test
+    public void testPlantCrops1() {
+        System.out.println("plantCrops - test 1");
+        
+        int acresToPlant = 6;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(60);
+        cropData.setWheatInStore(2000);
+        cropData.setAcresPlanted(0);
+        
+        int expResult = 1997;
+        int result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
+    
+    }   
+    
+     /**
+     * Test of PlantCrops method, of class CropControl.
+     * Test 2
+     */
+    
+        @Test
+    public void testPlantCrops2() {
+        System.out.println("plantCrops - test 2");
+ 
+        int acresToPlant = -6;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(60);
+        cropData.setWheatInStore(2000);
+        cropData.setAcresPlanted(0);
+        
+        int expResult = -1;
+        int result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
+    
+    }  
+    
+     /**
+     * Test of PlantCrops method, of class CropControl.
+     * Test 3
+     */
+    
+        @Test
+    public void testPlantCrops3() {
+        System.out.println("plantCrops - test 3");
+
+        int acresToPlant = 6;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(3);
+        cropData.setWheatInStore(2000);
+        cropData.setAcresPlanted(0);
+        
+        int expResult = -1;
+        int result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
+    
+    }  
+      
+     /**
+     * Test of PlantCrops method, of class CropControl.
+     * Test 4
+     */
+    
+        @Test
+    public void testPlantCrops4() {
+        System.out.println("plantCrops - test 4");
+ 
+        int acresToPlant = 6;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(60);
+        cropData.setWheatInStore(2);
+        cropData.setAcresPlanted(0);
+        
+        int expResult = -1;
+        int result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
+    }  
+    
+     /**
+     * Test of PlantCrops method, of class CropControl.
+     * Test 5
+     */
+   
+        @Test
+    public void testPlantCrops5() {
+        System.out.println("plantCrops - test 5");
+ 
+        int acresToPlant = 60;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(60);
+        cropData.setWheatInStore(30);
+        cropData.setAcresPlanted(0);
+        
+        int expResult = 0;
+        int result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
+    
+    }  
+    
+     /**
+     * Test of PlantCrops method, of class CropControl.
+     * Test 6
+     */
+    
+        @Test
+    public void testPlantCrops6() {
+        System.out.println("plantCrops - test 6");
+
+        int acresToPlant = 0;
+        CropData cropData = new CropData();
+        cropData.setAcresOwned(60);
+        cropData.setWheatInStore(2000);
+        cropData.setAcresPlanted(0);
+        
+        int expResult = 2000;
+        int result = CropControl.plantCrops(acresToPlant, cropData);
+        assertEquals(expResult, result);
+    
+    }  
 }

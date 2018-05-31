@@ -121,5 +121,43 @@ public class CropControl {
         return inStore;
     }
     
-     
+                 				
+        // The plantCrops method					
+        // Purpose: Set aside Wheat to plant crops										
+        // @param the amount  of acres to plant					
+        // @param a reference to the CropData object					
+        // @return the number of acres planted after the purchase					
+        // Pre-Conditions: acres to plant must be positive, 
+        //                have enough wheat to buy and land to plant.						
+    
+     public static int plantCrops( int acresToPlant, CropData cropData)
+     {
+     //if acresToPlant < 0, THEN RETURN "-1"
+       if (acresToPlant <0)
+            return -1;    
+         
+     //if ( acresOwned <  acresToPlant , THEN RETURN "-1"
+        int acresOwned = cropData.getAcresOwned();
+        if (acresOwned < acresToPlant)
+            return -1;
+         
+     //wheatNeededToPlant = acresToPlant / 2
+         int wheatNeededToPlant = acresToPlant /2;
+         
+     //if wheatInStore <  wheatNeededToPlant, THEN RETURN "-1"
+         int wheatInStore = cropData.getWheatInStore();
+         if(wheatInStore < wheatNeededToPlant)
+             return -1;    
+         
+     //wheatInStore -=  wheatNeededToPlant
+        wheatInStore -= wheatNeededToPlant;
+        cropData.setWheatInStore(wheatInStore);
+        
+     //acresPlanted = acresToPlant   
+     cropData.setAcresPlanted(acresToPlant);
+        
+         
+     //RETURN acresPlanted   
+        return wheatInStore;
+}
 }
