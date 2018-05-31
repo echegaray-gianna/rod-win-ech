@@ -63,4 +63,40 @@ public class CropControl {
          return owned;
     }
     
+    /**
+     * 
+     * @param acresToBuy
+     * @param pricePerAcre
+     * @param cropData
+     * @return 
+     */
+    public static int buyLand( int acresToBuy,int pricePerAcre, CropData cropData)
+    {
+//      if acresToBuy < 0, THEN RETURN -1
+        if(acresToBuy < 0)
+            return -1;
+        
+//      if ( wheatInStore <  acresToBuy * pricePerAcre) THEN RETURN -1
+        int wheat = cropData.getWheatInStore();
+        if( wheat < acresToBuy * pricePerAcre)
+            return -1;
+
+//      if ( population * 10 <  (acresToBuy + acresOwned  ) ) THEN RETURN -1
+        int population = cropData.getPopulation();
+        int acresOwned = cropData.getAcresOwned();
+        if( population * 10 < (acresToBuy + acresOwned))
+            return -1;
+        
+        
+//        acresOwned += acresToBuy;
+        acresOwned += acresToBuy;
+        cropData.setAcresOwned(acresOwned);
+
+//      wheatInStore -= ( acresToBuy * pricePerAcre )
+        wheat -= ( acresToBuy * pricePerAcre );
+        cropData.setWheatInStore(wheat);
+        
+        return acresOwned;
+    }
+    
 }
