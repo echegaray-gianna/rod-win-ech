@@ -356,58 +356,5 @@ public class CropControlTest {
     
     }
     
-     /**
-     * Test of setOffering method, of class CropControl.
-     * Test 1
-     */
-    
-     @Test
-    public void setOffering1() {
-        System.out.println("setOffering - test 1");
-        
-        int userinputinper = 5;
-        CropData.cropData = new CropData();
-        cropData.setwheatInStore(2700);
-        cropData.setHarvest(3000)
-                
-        int expResult = 5550;
-        int result = CropControl.setOffering(payOffering, cropData);
-        assertEquals(expResult, result);
-    }
-     /**
-     * Test of setOffering method, of class CropControl.
-     * Test 2
-     */
-    
-      @Test
-    public void setOffering2() {
-        System.out.println("setOffering - test 2");
-    }
-     /**
-     * Test of setOffering method, of class CropControl.
-     * Test 3
-     */
-    
-          @Test
-    public void setOffering3() {
-        System.out.println("setOffering - test 3");
-    }
-    
-     /**
-     * Test of setOffering method, of class CropControl.
-     * Test 4
-     */
-          @Test
-    public void setOffering4() {
-        System.out.println("setOffering - test 4");
-    }
-    
-     /**
-     * Test of setOffering method, of class CropControl.
-     * Test 5
-     */
-          @Test
-    public void setOffering5() {
-        System.out.println("setOffering - test 5");
-    }
+     
 }
