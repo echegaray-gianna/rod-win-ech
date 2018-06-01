@@ -69,7 +69,7 @@ public class CropControl {
      //@return the number of acres owned after the purchase					
      //Pre-Conditions: acres to buy must be positive, 
      //                 have enough population and 
-     //                 have wnough wheat for the purchase  					
+     //                 have enough wheat for the purchase  					
 					
 
     public static int buyLand( int acresToBuy,int pricePerAcre, CropData cropData)
@@ -160,4 +160,50 @@ public class CropControl {
      //RETURN acresPlanted   
         return wheatInStore;
 }
+        // The setOffering method					
+        // Purpose: Set aside user input (in %) for tithes and offerings										
+        // @param pay offering method				
+        // @param a reference to the CropData object					
+        // @return amount of wheat in store					
+        // Pre-Conditions: tithe can't be below 0%,
+        //                 tithe can't be above 100%.						
+    
+     public static int setOffering(int payOffering, int cropData)
+     {
+         
+        // Is this how you get user input? And is this where it goes?
+        Scanner keyboard = new Scanner (System.in);
+        System.out.print("Enter the percentage you want to give in tithes.");  
+        int userInputInPer = keyboard.nextInt(); // Get what the user types.
+         
+        
+     // if user input < 0%, THEN RETURN "-1"
+         
+         if (userinputinper < 0)
+             return -1;
+     
+     // if user input > 100%, THEN RETURN "-1"
+     
+         if (userinputinper > 100)
+             return -1;
+     
+     // Turn user input in % to a number, THEN take that number
+     // times by amount Harvested   
+         
+        int convertuserinput = userinputinper / 100;
+        int harvest = cropData.getHarvest();
+        int tithe = harvest * convertuserinput;
+        
+     // Subtract tithe from amount harvest, THEN whatever is 
+     // leftover of the harvest after tithe taken out, add to 
+     // wheat in store and return new value. 
+     
+        int leftoverFromHarvest = tithe - convertuserinput;
+        int wheatinstore = cropData.getWheatInStore();
+        int newwheatinstore = leftoverFromHarvest + wheatInStore;
+    
+     // RETURN wheatInStore
+                
+         return wheatInStore;
+     }        
 }
