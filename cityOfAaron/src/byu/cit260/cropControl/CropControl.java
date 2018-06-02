@@ -159,10 +159,10 @@ public class CropControl {
         return wheatInStore;
     }
     // The setOffering method					
-    // Purpose: Set aside user input (in %) for tithes and offerings										
+    // Purpose: Make sure the offering is positive but not over 100%.										
     // @param pay offering method				
     // @param a reference to the CropData object					
-    // @return amount of wheat in store					
+    // @return pay offering					
     // Pre-Conditions: tithe can't be below 0%,
     //                 tithe can't be above 100%.						
 
@@ -175,13 +175,13 @@ public class CropControl {
         if (payOffering > 100) {
             return -1;
         }
-        
+        // Save the result.
         cropData.setOffering(payOffering);
-        return payOffering;
-        
-        
-//        // Turn user input in % to a number, THEN take that number
-//        // times by amount Harvested   
+        return payOffering;  
+}
+
+// (Part of payOffering) Turn user input in % to a number, 
+          // THEN take that number times by amount Harvested   
 //        int convertUserInput = payOffering / 100;
 //        int harvest = cropData.getHarvest();
 //        int tithe = harvest * convertUserInput;
@@ -195,5 +195,5 @@ public class CropControl {
 
         // RETURN wheatInStore
 //        return wheatInStore;
-    }
+    
 }

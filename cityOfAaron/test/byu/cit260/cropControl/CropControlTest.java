@@ -356,5 +356,68 @@ public class CropControlTest {
     
     }
     
-     
+     /**
+     * Test of setOffering method, of class CropControl.
+     * Test 1
+     */
+    
+     @Test
+    public void setOffering1() {
+        System.out.println("setOffering - test 1");
+        
+        CropData cropData = new CropData();
+        int payOffering = 5;
+    }
+    
+    /**
+     * Test of setOffering method, of class CropControl.
+     * Test 2
+     */
+    
+     @Test
+    public void setOffering2() {
+        System.out.println("setOffering - test 2");
+        
+        CropData cropData = new CropData();
+        int payOffering = -20;
+    }
+    
+    /**
+     * Test of setOffering method, of class CropControl.
+     * Test 3
+     */
+    
+     @Test
+    public void setOffering3() {
+        System.out.println("setOffering - test 3");
+    
+        CropData cropData = new CropData();
+        int payOffering = 110;
+    }
+    
+     /**
+     * Test of setOffering method, of class CropControl.
+     * Test 4
+     */
+    
+     @Test
+    public void setOffering4() {
+        System.out.println("setOffering - test 4");
+    
+        CropData cropData = new CropData();
+        int payOffering = 0;
+    }
+    
+     /**
+     * Test of setOffering method, of class CropControl.
+     * Test 5
+     */
+    
+     @Test
+    public void setOffering5() {
+        System.out.println("setOffering - test 5");
+    
+        CropData cropData = new CropData();
+        int payOffering = 100;
+    }
 }
