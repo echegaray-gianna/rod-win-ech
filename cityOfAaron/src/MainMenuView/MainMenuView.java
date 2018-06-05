@@ -19,7 +19,7 @@ public class MainMenuView {
     // Returns: none
     // =========================================================   
     
-  public void displayMainMenu() {
+  public void displayMainView() {
    
     // Display the menu
     // Prompt the user and get the user’s input
