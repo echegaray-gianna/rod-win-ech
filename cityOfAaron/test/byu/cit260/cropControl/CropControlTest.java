@@ -5,6 +5,7 @@
 
 package byu.cit260.cropControl;
 
+import byu.cit260.controller.CropControl;
 import byui.cit260.model.CropData;
 import org.junit.Test;
 import static org.junit.Assert.*;

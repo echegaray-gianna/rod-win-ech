@@ -4,7 +4,7 @@
 // Date last modified: 5 June 2018
 //-------------------------------------------------------------
 
-package MainMenuView;
+package byu.cit260.view;
 
 import java.util.Scanner;
 import byu.cit260.cityOfAaron.CityOfAaron;

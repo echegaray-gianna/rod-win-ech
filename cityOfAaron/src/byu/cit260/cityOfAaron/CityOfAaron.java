@@ -14,7 +14,7 @@
 
 package byu.cit260.cityOfAaron;
 
-import MainMenuView.MainMenuView;
+import byu.cit260.view.MainMenuView;
 import byui.cit260.model.*;
 
 
