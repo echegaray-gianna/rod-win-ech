@@ -15,6 +15,10 @@ import java.util.ArrayList;
  */
 public class Game implements Serializable{
 
+    public static void setCurrentGame(Game theGame) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private Player thePlayer;
     private CropData cropData;
     private ArrayList<ListItem> items = new ArrayList<>();
@@ -49,6 +53,10 @@ public class Game implements Serializable{
 
     public void setItems(ArrayList<ListItem> items) {
         this.items = items;
+    }
+
+    public void setPlayer(Player thePlayer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
