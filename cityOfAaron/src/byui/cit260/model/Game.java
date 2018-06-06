@@ -35,7 +35,6 @@ public class Game implements Serializable{
     public void setThePlayer(Player thePlayer) {
         this.thePlayer = thePlayer;
     }
-   
 
     //CropData
     public CropData getCropData() {
@@ -55,11 +54,4 @@ public class Game implements Serializable{
         this.items = items;
     }
 
-    public void setPlayer(Player thePlayer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-    
-    
  }

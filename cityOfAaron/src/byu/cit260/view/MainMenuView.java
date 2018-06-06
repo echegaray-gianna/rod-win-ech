@@ -18,17 +18,17 @@ import byui.cit260.model.Player;
 public class MainMenuView {
   
     Scanner keyboard = new Scanner(System.in);
+    private String theMenu;
+    private int max;
+    
+    
     // The displayMenuView method
     // Purpose: displays the menu, gets the user's input, and does the 
     //               selected action
     // Parameters: none
     // Returns: none
     // =========================================================   
-    
-    private String theMenu;
-
-    public MainMenuView(String theMenu, int max) {
-        
+    public MainMenuView() {
         theMenu = "\n" +
                 "**********************************\n" +
                    "* CITY OF AARON: MAIN GAME MENU  *\n" +
@@ -38,18 +38,10 @@ public class MainMenuView {
                    " 3 - Get help on playing the game\n" +
                    " 4 - Save game\n" +
                    " 5 - Quit\n";
-        
         max = 5;
-
-        
-        this.theMenu = theMenu;
-        this.max = max;
     }
-    private int max;
+    
 
-    public MainMenuView() {
-      
-    }
     
     
   public void displayMainView() {
@@ -58,7 +50,7 @@ public class MainMenuView {
     do {
         
     // Display the menu
-      System.out.println(theMenu);
+        System.out.println(theMenu);
       
     // Prompt the user and get the user’s input
     menuOption = getMenuOption();
@@ -89,7 +81,7 @@ public class MainMenuView {
             // if it is not a valid value, output an error message
             if(userInput < 1 || userInput > max)
             {
-                System.out.println("/noption must be between 1 and " + max);
+                System.out.println("\noption must be between 1 and " + max);
             }    
         // go back to the top of the loop if input was not valid 
         } while(userInput < 1 || userInput > max);
@@ -99,12 +91,11 @@ public class MainMenuView {
        
    }
  
-     // The doAction method
-       // Purpose: performs the selected action
-       // Parameters: none
-       // Returns: none
-       // ===================================     
-   
+  // The doAction method
+  // Purpose: performs the selected action
+  // Parameters: none
+  // Returns: none
+  // ===================================     
    public void doAction(int option)
    {
         // if the option is 1, call startNewGame( )
@@ -117,22 +108,17 @@ public class MainMenuView {
             case 1:  // create and start a new game
                startNewGame();
                break;
-               
             case 2: // get and start a saved game
                 startSavedGame();
                 break;
-                
             case 3: // get help menu
                displayHelpMenuView();
                break;
-               
             case 4:// save game
                displaySaveGameView();
                break;
-               
             case 5: 
                 System.out.println("Thanks for playing... goodbaye");
- 
         }  
    }
    
@@ -147,7 +133,7 @@ public class MainMenuView {
     Game theGame =new Game();
     
     // Save a reference to it in the GameProject class.
-    Game.setCurrentGame(theGame);
+    CityOfAaron.setTheGame(theGame);
     
     // Display the Banner Page.
     System.out.println("\nWelcome to the city of Aaron. You have been summoned here by the High Priest to assume your role as ruler of the city. Your responsibility is to buy and sell land, determine how much wheat to plant each year and how much to set aside to feed your people. In addition, it will be your job to pay an annual tithe on the wheat that is harvested. If you fail to provide enough wheat for the people, people will starve,  some people will die, and your workforce will be diminished. Plan carefully. And Oh, there is always a danger of rats eating your wheat.");
@@ -164,10 +150,10 @@ public class MainMenuView {
     thePlayer.setName(name);
     
     // Save a reference to the player object in the Game object
-    theGame.setPlayer(thePlayer);
+    theGame.setThePlayer(thePlayer);
         
     // Display a welcome message
-    System.out.println("\nWelcome" + name + "have fun");
+    System.out.println("\nWelcome " + name + " have fun");
     
     // Display the Game menu
  
@@ -205,8 +191,4 @@ public class MainMenuView {
        System.out.println("\nSaved Game.");
    }
 
-    public void displayMenuView() {
-        
-    }
-   
 }
