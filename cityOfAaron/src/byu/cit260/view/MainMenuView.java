@@ -159,8 +159,8 @@ public class MainMenuView {
  
        //System.out.println("\nStart new game option selected.");
    }
-   
      
+   
     // The startSavedGame method
     // Purpose: save game object 
     // Parameters: none
@@ -191,4 +191,14 @@ public class MainMenuView {
        System.out.println("\nSaved Game.");
    }
 
+   public static int payOffering() {
+       
+       // Is this done right?
+       Scanner keyboard = new Scanner(System.in);
+       System.out.println("Enter the percentage you would like to give for your tithe.");
+       int payOffering = keyboard.nextInt();
+       
+       return payOffering;
+   }
+  
 }
