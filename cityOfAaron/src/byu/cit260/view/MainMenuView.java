@@ -40,9 +40,8 @@ public class MainMenuView {
                    " 5 - Quit\n";
         max = 5;
     }
-    
 
-    
+
     
   public void displayMainView() {
      
