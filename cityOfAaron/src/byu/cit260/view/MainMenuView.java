@@ -135,7 +135,7 @@ public class MainMenuView {
     CityOfAaron.setTheGame(theGame);
     
     // Display the Banner Page.
-    System.out.println("\nWelcome to the city of Aaron. You have been summoned here by the High Priest to assume your role as ruler of the city. Your responsibility is to buy and sell land, determine how much wheat to plant each year and how much to set aside to feed your people. In addition, it will be your job to pay an annual tithe on the wheat that is harvested. If you fail to provide enough wheat for the people, people will starve,  some people will die, and your workforce will be diminished. Plan carefully. And Oh, there is always a danger of rats eating your wheat.");
+    System.out.println("\nGreetings! This is the city of Aaron where you have been chosen by the people to be our ruler. You will be responsible for the buying and selling of land, how much wheat to plant and how much to set aside. It is also your job to pay tithe on the harvested wheat. Failure to do so will result in starvation, death, and diminished workforce. Plan wisely as there is also the danger of rats eating your wheat. ");
     
     // Create a new Player object
     Player thePlayer = new Player();
@@ -158,8 +158,8 @@ public class MainMenuView {
  
        //System.out.println("\nStart new game option selected.");
    }
-   
      
+   
     // The startSavedGame method
     // Purpose: save game object 
     // Parameters: none
@@ -190,4 +190,14 @@ public class MainMenuView {
        System.out.println("\nSaved Game.");
    }
 
+   public static int payOffering() {
+       
+       // Is this done right?
+       Scanner keyboard = new Scanner(System.in);
+       System.out.println("Enter the percentage you would like to give for your tithe.");
+       int payOffering = keyboard.nextInt();
+       
+       return payOffering;
+   }
+  
 }

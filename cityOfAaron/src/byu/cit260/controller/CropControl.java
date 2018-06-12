@@ -126,7 +126,8 @@ public class CropControl {
     // @param a reference to the CropData object					
     // @return the number of acres planted after the purchase					
     // Pre-Conditions: acres to plant must be positive, 
-    //                have enough wheat to buy and land to plant.						
+    //                have enough wheat to buy and land to plant.
+    
     public static int plantCrops(int acresToPlant, CropData cropData) {
         //if acresToPlant < 0, THEN RETURN "-1"
         if (acresToPlant < 0) {
@@ -180,20 +181,48 @@ public class CropControl {
         return payOffering;  
 }
 
-// (Part of payOffering) Turn user input in % to a number, 
-          // THEN take that number times by amount Harvested   
-//        int convertUserInput = payOffering / 100;
-//        int harvest = cropData.getHarvest();
-//        int tithe = harvest * convertUserInput;
-//
-//        // Subtract tithe from amount harvest, THEN whatever is 
-//        // leftover of the harvest after tithe taken out, add to 
-//        // wheat in store and return new value. 
-//        int leftOverFromHarvest = tithe - convertUserInput;
-//        int wheatInStore = cropData.getWheatInStore();
-//        int newWheatInStore = leftOverFromHarvest + wheatInStore;
-
-        // RETURN wheatInStore
-//        return wheatInStore;
+    public static int payOffering(double, CropData cropData) {
+        
+        // Convert user's percentage to a decimal.
+        // I'm not sure how to reference the user input for payOffering. 
+        int convertUserInput = payOffering / 100;
+        
+        // Get harvest information from cropData.
+        int harvest = cropData.getHarvest();
+        
+        // Multiply harvest by converted percentage.
+        int tithe = harvest * convertUserInput;
+        
+        // Subtract tithe from harvest.
+        int leftoverFromHarvest = harvest - tithe;
+        
+        // Leftovers from harvest get added to wheat in store.
+        int wheatInStore = cropData.getWheatInStore();
+        int newWheatInStore = leftoverFromHarvest + wheatInStore;
+        
+        // RETURN that number to wheat in store.
+        return wheatInStore;
+    }
+ 
+    public static int calcStarved(CropData cropData) {
+        int feedPeople = cropData.getPeopleFed();
+        int wheatSetAside = cropData.getWheatForPeople;
+        
+        // Calculate how many people were fed. (20 bushels = 1 person)
+        
+        // Divide amount of wheat set aside by 20.
+        int findIfPeopleWereFed = wheatSetAside / 20;
+        
+        // After finding how many were fed, leftover have starved. Subtract that
+        // number from population. 
+         if(findIfPeopleWereFed != people fed)
+            {
+                int newPopulation = population - findIfPeopleWereFed;
+                System.out.println(newPopulation + "people have starved");
+            } 
+                  
+        return Population;
+    }
+    
     
 }
