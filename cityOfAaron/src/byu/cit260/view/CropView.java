@@ -126,5 +126,17 @@ public class CropView {
         CropControl.feedPeople(bushelsOfGrain, cropData);
    
     }
+    public static void plantCrops() {
+        // Get user's input for how much they want to plant.
+        int toPlant;
+        toPlant = keyboard.nextInt();
+        
+        // Call the plantCrops method. 
+        CropControl.plantCrops(0, cropData);
+    }
+    public static void showStarved() {
     
+        // Call the calcStarved method.
+        CropControl.calcStarved(cropData);
+    }
 }
