@@ -8,8 +8,7 @@ package byu.cit260.view;
 import byui.cit260.model.*;
 import byu.cit260.controller.*;
 import java.util.Scanner;
-import byu.cit260.CityOfAaron.*;
-import byu.cit260.cityOfAaron.CityOfAaron;
+import byu.cit260.cityOfAaron.*;
 
 /**
  *

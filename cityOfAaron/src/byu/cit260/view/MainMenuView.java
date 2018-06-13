@@ -20,6 +20,7 @@ public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
+    HelpMenuView hmv = null;
 
     // The displayMenuView method
     // Purpose: displays the menu, gets the user's input, and does the 
@@ -38,6 +39,7 @@ public class MainMenuView {
                 + " 4 - Save game\n"
                 + " 5 - Quit\n";
         max = 5;
+        hmv = new HelpMenuView();
     }
 
     public void displayMainView() {
@@ -186,8 +188,7 @@ public class MainMenuView {
     // Returns: none
     // =================================== 
     public void displayHelpMenuView() {
-
-        System.out.println("\nHelp Menu");
+        hmv.displayMenuView();
     }
 
     // The displaysavedGameView method
