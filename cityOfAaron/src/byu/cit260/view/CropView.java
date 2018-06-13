@@ -55,6 +55,7 @@ public class CropView {
         // as they are written
         sellLandView();
         displayCropsReportView();
+        feedPeopleView();
     }
 
 //    METHODS TO IMPLEMENT
@@ -106,4 +107,24 @@ public class CropView {
         System.out.println( reportHeader + report);
     }
 
+    // The feedPeopleView method()
+    // Purpose: allows the user to feed people
+    // Parameters: none
+    // Returns: none
+    public static void feedPeopleView() {
+      
+        // Prompt the user to enter the number of bushels of grain want to give 
+        // to the people
+        
+        System.out.print("\nHow many bushels of grain do you want to give to the people? ");
+
+        //  Get the user’s input and save it.
+        int bushelsOfGrain;
+        bushelsOfGrain = keyboard.nextInt();
+
+        // Call thefeedPeopleView() method in the control layer 
+        CropControl.feedPeople(bushelsOfGrain, cropData);
+   
+    }
+    
 }
