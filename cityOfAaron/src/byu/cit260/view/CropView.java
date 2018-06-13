@@ -8,8 +8,7 @@ package byu.cit260.view;
 import byui.cit260.model.*;
 import byu.cit260.controller.*;
 import java.util.Scanner;
-import byu.cit260.CityOfAaron.*;
-import byu.cit260.cityOfAaron.CityOfAaron;
+import byu.cit260.cityOfAaron.*;
 
 /**
  *
@@ -51,9 +50,11 @@ public class CropView {
     public static void runCropsView() {
         // call the buyLandView( ) method
         buyLandView();
-
+        
         // add calls to the other crop view methods
         // as they are written
+        sellLandView();
+        displayCropsReportView();
     }
 
 //    METHODS TO IMPLEMENT
@@ -62,5 +63,47 @@ public class CropView {
 //    plantCropsView()
 //    showStarvedView()
 //    displayCropsReportView()
+    
+    // The sellLandView method()
+    // Purpose: allows the user to sell part of his lands
+    // Parameters: none
+    // Returns: none
+    public static void sellLandView(){
+        // Get the cost of land for this round.
+        int price = CropControl.calcLandCost();
+
+        // Prompt the user to enter the number of acres to sell
+        System.out.format("Land is selling for %d bushels per acre.%n", price);
+        System.out.print("\nHow many acres of new land do you want sell? ");
+        
+        //  Get the user’s input and save it.
+        int toSell;
+        toSell = keyboard.nextInt();
+        
+         // Call the sellLand( ) method in the control layer to sell the land
+        CropControl.sellLand(price, toSell, cropData);
+    }
+    
+    
+    public static void displayCropsReportView(){
+        String reportHeader = "\n"
+                + "-------------       --------------\n"
+                + "    CITY OF AARON: ANNUAL REPORT  \n"
+                + "-------------       --------------\n";
+        String report = "\n"
+                + "YEAR NUMBER:               " + cropData.getYear() + "\n"
+                + "PEOPOPLE STARVED:          " + cropData.getNumStarved() + "\n"
+                + "NEW PEOPLE:                " + cropData.getNewPeople()+ "\n"
+                + "CURRENT POPULATION:        " + cropData.getPopulation()+ "\n"
+                + "ACRES OWNED BY THE CITY:   " + cropData.getAcresOwned()+ "\n"
+                + "BUSHELS PER ACRE:          " + cropData.getHarvest()+ "\n"
+                + "BUSHELS PAYED IN OFFERING: " + cropData.getOfferingBushels()+ "\n"
+                + "BUSHELS EATEN BY RATS:     " + cropData.getEatenByRats()+ "\n"
+                + "BUSHELS IN STORE:          " + cropData.getWheatInStore()+ "\n"
+                + "-------------       --------------\n";
+        
+        
+        System.out.println( reportHeader + report);
+    }
 
 }

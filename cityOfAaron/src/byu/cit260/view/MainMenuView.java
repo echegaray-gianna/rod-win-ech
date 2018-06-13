@@ -20,6 +20,7 @@ public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
+    HelpMenuView hmv = null;
 
     public MainMenuView() {
         theMenu = "\n"
@@ -32,6 +33,7 @@ public class MainMenuView {
                 + " 4 - Save game\n"
                 + " 5 - Quit\n";
         max = 5;
+        hmv = new HelpMenuView();
     }
 
     // The displayMenuView method
@@ -188,8 +190,7 @@ public class MainMenuView {
     // Returns: none
     // =================================== 
     public void displayHelpMenuView() {
-
-        System.out.println("\nHelp Menu");
+        hmv.displayMenuView();
     }
 
     // The displaysavedGameView method
