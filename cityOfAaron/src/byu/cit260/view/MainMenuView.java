@@ -21,12 +21,6 @@ public class MainMenuView {
     private String theMenu;
     private int max;
 
-    // The displayMenuView method
-    // Purpose: displays the menu, gets the user's input, and does the 
-    //               selected action
-    // Parameters: none
-    // Returns: none
-    // =========================================================   
     public MainMenuView() {
         theMenu = "\n"
                 + "**********************************\n"
@@ -40,6 +34,12 @@ public class MainMenuView {
         max = 5;
     }
 
+    // The displayMenuView method
+    // Purpose: displays the menu, gets the user's input, and 
+    //          does the selected action
+    // Parameters: none
+    // Returns: none
+    // =========================================================   
     public void displayMainView() {
 
         int menuOption;
@@ -58,6 +58,7 @@ public class MainMenuView {
         } while (menuOption != max);
     }
 
+    
     // The getMenuOption method
     // Purpose: gets the user's input
     // Parameters: none
@@ -76,6 +77,7 @@ public class MainMenuView {
             if (userInput < 1 || userInput > max) {
                 System.out.println("\noption must be between 1 and " + max);
             }
+            
             // go back to the top of the loop if input was not valid 
         } while (userInput < 1 || userInput > max);
 
@@ -109,7 +111,7 @@ public class MainMenuView {
                 displaySaveGameView();
                 break;
             case 5:
-                System.out.println("Thanks for playing... goodbaye");
+                System.out.println("Thanks for playing... goodbye");
         }
     }
 
@@ -208,6 +210,10 @@ public class MainMenuView {
         int payOffering = keyboard.nextInt();
 
         return payOffering;
+    }
+
+    void MainView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
