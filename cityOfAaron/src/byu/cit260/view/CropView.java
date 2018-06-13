@@ -128,11 +128,12 @@ public class CropView {
     }
     public static void plantCrops() {
         // Get user's input for how much they want to plant.
+        // Ask the user System.out.println()
         int toPlant;
         toPlant = keyboard.nextInt();
         
         // Call the plantCrops method. 
-        CropControl.plantCrops(0, cropData);
+        CropControl.plantCrops(toPlant, cropData);
     }
     public static void showStarved() {
     
