@@ -138,9 +138,6 @@ public class CityOfAaron {
        //Lesson 7
        MainMenuView mmv = new MainMenuView();
        mmv.displayMainView();
-       
-       GameMenuView gmv = new GameMenuView();
-       gmv.displayGameMenuView();
     }
     
 }

@@ -151,7 +151,15 @@ public class MainMenuView {
         CityOfAaron.setTheGame(theGame);
 
         // Display the Banner Page.
-        System.out.println("\nGreetings! This is the city of Aaron where you have been chosen by the people to be our ruler. You will be responsible for the buying and selling of land, how much wheat to plant and how much to set aside. It is also your job to pay tithe on the harvested wheat. Failure to do so will result in starvation, death, and diminished workforce. Plan wisely as there is also the danger of rats eating your wheat. ");
+        System.out.println("\nGreetings! This is the city of Aaron where "
+                + "you have been chosen by the people to be our ruler. "
+                + "\nYou will be responsible for the buying and selling of land, "
+                + "how much wheat to plant and how much to set aside. "
+                + "\nIt is also your job to pay tithe on the harvested wheat. "
+                + "\nFailure to do so will result in starvation, death, and "
+                + "diminished workforce. "
+                + "\nPlan wisely as there is also the "
+                + "danger of rats eating your wheat. ");
 
         // Create a new Player object
         Player thePlayer = new Player();
@@ -171,6 +179,9 @@ public class MainMenuView {
         System.out.println("\nWelcome " + name + " have fun");
 
         // Display the Game menu
+               
+       GameMenuView gmv = new GameMenuView();
+       gmv.displayGameMenuView();
         //System.out.println("\nStart new game option selected.");
     }
 
