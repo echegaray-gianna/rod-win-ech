@@ -10,10 +10,10 @@ import byu.cit260.cityOfAaron.CityOfAaron;
 
 
 public class GameMenuView {
-    
-    Scanner keyboard = new Scanner(System.in);
+   
     private String theGameMenu;
     private int max;
+    Scanner keyboard = new Scanner(System.in);
    
   
     public GameMenuView() {
@@ -81,7 +81,7 @@ public class GameMenuView {
 
         // return the value input by the user
         return userInput;  
-
+        
     }
     
     // The doAction method
@@ -121,7 +121,7 @@ public class GameMenuView {
     // =================================== 
     public void viewTheMap() {
         
-      System.out.println("\nView some map optipns.");  
+      System.out.println("\nView some map options.");  
         
     }
     
@@ -134,15 +134,15 @@ public class GameMenuView {
     public void viewPrintAlist() {
        
         //HERE!
-        
+ 
         //create a new displayPrintListMenu
-        
+        DisplayPrintListMenu dplm = new DisplayPrintListMenu();
+    
         // call the displayMenu()
-      
-        
+          dplm.displayListMenuView();
     }
     
-    // The moveToANewLocationp method
+    // The moveToANewLocation method
     // Purpose:  provides the user with a set of list options
     // Parameters: none
     // Returns: none
