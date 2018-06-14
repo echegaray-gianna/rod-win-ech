@@ -132,14 +132,13 @@ public class GameMenuView {
     // Returns: none
     // =================================== 
     public void viewPrintAlist() {
+       
+        //HERE!
         
-      System.out.println("\n"
-                         + "View some map options.\n"
-                         + "**********************\n"
-                         + "List or view the animals in the storehouse\n"
-                         + "List or view the tools in the storehouse\n"
-                         + "List or view the provisions in the storehouse\n"
-                         + "List or view the authors of this game\n" );  
+        //create a new displayPrintListMenu
+        
+        // call the displayMenu()
+      
         
     }
     

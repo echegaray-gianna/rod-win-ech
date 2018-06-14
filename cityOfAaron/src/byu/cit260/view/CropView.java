@@ -54,8 +54,11 @@ public class CropView {
         // add calls to the other crop view methods
         // as they are written
         sellLandView();
-        displayCropsReportView();
         feedPeopleView();
+        plantCrops();
+        showStarved();
+        
+        displayCropsReportView();
     }
 
 //    METHODS TO IMPLEMENT
@@ -128,7 +131,7 @@ public class CropView {
     }
     public static void plantCrops() {
         // Get user's input for how much they want to plant.
-        // Ask the user System.out.println()
+        System.out.print("\nHow many acres of land do you want to plant?: ");
         int toPlant;
         toPlant = keyboard.nextInt();
         
@@ -136,7 +139,8 @@ public class CropView {
         CropControl.plantCrops(toPlant, cropData);
     }
     public static void showStarved() {
-    
+        
+        System.out.print("\nPeople who starved: ");
         // Call the calcStarved method.
         CropControl.calcStarved(cropData);
     }

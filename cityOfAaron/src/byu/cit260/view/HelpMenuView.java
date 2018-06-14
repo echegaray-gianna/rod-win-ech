@@ -91,6 +91,7 @@ public class HelpMenuView {
     public void viewMoveHelp(){
         System.out.println("View Move Help...");
     }
+    
     public void viewListHelp(){
         System.out.println("View List Help...");
     }
