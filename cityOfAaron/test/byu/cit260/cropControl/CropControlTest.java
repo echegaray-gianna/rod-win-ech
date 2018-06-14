@@ -39,7 +39,7 @@ public class CropControlTest {
      */
     @Test
     public void testBuyLand1() {
-        System.out.println("buyLand - test 1");
+        System.out.println("buyLand  - test 1");
         
         int acresToBuy = 50;
         int pricePerAcre = 20;
