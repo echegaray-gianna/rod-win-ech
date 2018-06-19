@@ -139,7 +139,7 @@ public class CropView {
         CropControl.plantCrops(toPlant, cropData);
     }
     public static void showStarved() {
-        
+
         System.out.print("\nPeople who starved: ");
         // Call the calcStarved method.
         CropControl.calcStarved(cropData);
