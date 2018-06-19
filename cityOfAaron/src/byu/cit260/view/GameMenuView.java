@@ -109,8 +109,8 @@ public class GameMenuView {
                 manageTheCrops();
                 break;
             case 5: //ReturnToTheMainMenu
-               ReturnToTheMainMenu();
-               break;
+               return;
+               
         }
     }  
    
@@ -168,13 +168,10 @@ public class GameMenuView {
     // =================================== 
     public void manageTheCrops() {
 
-        System.out.println("\nManage The Crops.");
+        CropView.runCropsView();
     }
     
     //Return to the main menu
-    public void ReturnToTheMainMenu() {
-        MainMenuView mmv = new MainMenuView();
-         mmv.displayMainView();
-    }
+
     
 }

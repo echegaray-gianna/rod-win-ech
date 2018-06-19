@@ -134,8 +134,8 @@ public class CropControl {
             return -1;
         }
 
-        //if ( acresOwned <  acresToPlant , THEN RETURN "-1"
-        int acresOwned = cropData.getAcresOwned();
+        //if ( acresOwned <  acresToPlant , THEN RETURN "-1"      
+        int acresOwned = cropData.getAcresOwned();      
         if (acresOwned < acresToPlant) {
             return -1;
         }
@@ -143,7 +143,7 @@ public class CropControl {
         //wheatNeededToPlant = acresToPlant / 2
         int wheatNeededToPlant = acresToPlant / 2;
 
-        //if wheatInStore <  wheatNeededToPlant, THEN RETURN "-1"
+        //if wheatInStore <  wheatNeededToPlant, THEN RETURN "-1"      
         int wheatInStore = cropData.getWheatInStore();
         if (wheatInStore < wheatNeededToPlant) {
             return -1;
