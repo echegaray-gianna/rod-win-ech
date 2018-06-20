@@ -17,7 +17,7 @@ public class DisplayPrintListMenu {
     private int max;
     private Scanner keyboard = new Scanner(System.in);
    
-        public  DisplayPrintListMenu(){
+    public  DisplayPrintListMenu(){
 
                 printListMenu = ("n"
                         + "---------------     --------------\n"

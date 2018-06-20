@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author hernan rodriguez
  */
-public class HelpMenuView {
+public class HelpMenuView{
     
     private String mainMenu;
     private int max;
