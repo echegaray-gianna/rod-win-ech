@@ -89,10 +89,11 @@ public class GameMenuView extends MenuView{
         //HERE!
  
         //create a new displayPrintListMenu
-        DisplayPrintListMenu dplm = new DisplayPrintListMenu();
+        ListMenuView lmv = new ListMenuView();
     
         // call the displayMenu()
-          dplm.displayListMenuView();
+        // Before changing to inherit and name, it was displayListMenuView
+          lmv.displayMenu();
     }
     
     // The moveToANewLocation method

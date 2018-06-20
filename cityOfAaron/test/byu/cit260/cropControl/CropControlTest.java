@@ -368,6 +368,7 @@ public class CropControlTest {
         
         CropData cropData = new CropData();
         int payOffering = 5;
+        // if within parameters, you're good. 
     }
     
     /**
@@ -381,6 +382,7 @@ public class CropControlTest {
         
         CropData cropData = new CropData();
         int payOffering = -20;
+        // Not usable user input.
     }
     
     /**
@@ -394,6 +396,7 @@ public class CropControlTest {
     
         CropData cropData = new CropData();
         int payOffering = 110;
+        // Not usable user input.
     }
     
      /**
