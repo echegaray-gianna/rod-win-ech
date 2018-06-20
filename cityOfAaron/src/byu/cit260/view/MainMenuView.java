@@ -150,7 +150,7 @@ public class MainMenuView extends MenuView {
     // Returns: none
     // =================================== 
     public void displayHelpMenuView() {
-        hmv.displayMenuView();
+        hmv.displayMenu();
     }
 
     // The displaysavedGameView method
@@ -171,10 +171,6 @@ public class MainMenuView extends MenuView {
         int payOffering = keyboard.nextInt();
 
         return payOffering;
-    }
-
-    void MainView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

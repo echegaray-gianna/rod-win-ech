@@ -181,29 +181,8 @@ public class CropControl {
         return payOffering;  
 }
 
-//    public static int payOffering(double payOffering,CropData cropData) {
-//        
-//        // Convert user's percentage to a decimal.
-//        // I'm not sure how to reference the user input for payOffering. 
-//        int convertUserInput = payOffering / 100;
-//        
-//        // Get harvest information from cropData.
-//        int harvest = cropData.getHarvest();
-//        
-//        // Multiply harvest by converted percentage.
-//        int tithe = harvest * convertUserInput;
-//        
-//        // Subtract tithe from harvest.
-//        int leftoverFromHarvest = harvest - tithe;
-//        
-//        // Leftovers from harvest get added to wheat in store.
-//        int wheatInStore = cropData.getWheatInStore();
-//        int newWheatInStore = leftoverFromHarvest + wheatInStore;
-//        
-//        // RETURN that number to wheat in store.
-//        return wheatInStore;
-//    }
-// 
+
+    
     public static int calcStarved(CropData cropData) {
         
         int wheatSetAside = cropData.getWheatForPeople();

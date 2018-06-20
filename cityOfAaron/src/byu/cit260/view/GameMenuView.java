@@ -5,14 +5,10 @@
 //-------------------------------------------------------------
 package byu.cit260.view;
 
-import java.util.Scanner;
-import byu.cit260.cityOfAaron.CityOfAaron;
-
 /**
  *
  * @author Gianna
  */
-
 public class GameMenuView extends MenuView{
    
 
@@ -30,11 +26,6 @@ public class GameMenuView extends MenuView{
                 5
                 );  
     }
-    
-    
-
-      
-
     
     // The doAction method
     // Purpose: performs the selected action
@@ -77,8 +68,7 @@ public class GameMenuView extends MenuView{
       System.out.println("\nView some map options.");  
         
     }
-    
-    
+
     // The viewPrintAlist method
     // Purpose:  add some interest and creativity to the game
     // Parameters: none
@@ -93,8 +83,9 @@ public class GameMenuView extends MenuView{
     
         // call the displayMenu()
         // Before changing to inherit and name, it was displayListMenuView
-          lmv.displayMenu();
+        lmv.displayMenu();
     }
+    
     
     // The moveToANewLocation method
     // Purpose:  provides the user with a set of list options
@@ -124,8 +115,4 @@ public class GameMenuView extends MenuView{
 
         CropView.runCropsView();
     }
-    
-    //Return to the main menu
-
-    
 }
