@@ -164,9 +164,10 @@ public class DisplayPrintListMenu {
     //Return to the main menu
     public void ReturnToTheGameMenu() {
         GameMenuView gmv = new GameMenuView();
-         gmv.displayGameMenuView();
+         gmv.displayMenu();
     }
         
+    
         
         
         

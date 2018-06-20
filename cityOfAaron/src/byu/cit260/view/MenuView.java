@@ -65,13 +65,13 @@ public abstract class MenuView implements ViewInterface{
 
         // begin loop
         do {
-            System.out.format("\nPlease enter an option(1 - %d):", max);
+            System.out.format("\nPlease enter an option between 1 - %d: ", max);
             // get user input from the keyboard
             userInput = keyboard.nextInt();
 
             // if it is not a valid value, output an error message
             if (userInput < 1 || userInput > max) {
-                System.out.println("\noption must be between 1 and " + max);
+                System.out.println("\nOption must be between 1 and " + max);
             }
             
             // go back to the top of the loop if input was not valid 
