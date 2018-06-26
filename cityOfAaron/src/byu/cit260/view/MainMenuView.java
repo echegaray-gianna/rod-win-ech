@@ -126,7 +126,7 @@ public class MainMenuView extends MenuView {
 
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun");
-
+        GameControl.createNewGame(name);
         // Display the Game menu
                
        GameMenuView gmv = new GameMenuView();
