@@ -87,7 +87,11 @@ public class ListMenuView extends MenuView {
     public void toolsInStorehouse() {
        
         System.out.println("\nHere are the tools you have in the storehouse: ");
+        ArrayList<ListItem> tools = theGame.getTools();
         
+        for(ListItem tool : tools){
+            System.out.println("\t" + tool.getName() + ": " + tool.getNumber() + "\n");
+        }
     }
     
     // The provisionsInStorehouse method
