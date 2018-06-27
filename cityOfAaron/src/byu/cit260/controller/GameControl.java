@@ -71,6 +71,7 @@ public class GameControl {
         animals.add(new ListItem("horses", 3));
         animals.add(new ListItem("pigs", 7));
         animals.add(new ListItem("goats", 4));
+        animals.add(new ListItem("chicken", 15));
 
         theGame.setAnimals(animals);
     }

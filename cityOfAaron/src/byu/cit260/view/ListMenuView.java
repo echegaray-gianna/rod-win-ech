@@ -71,14 +71,12 @@ public class ListMenuView extends MenuView {
     public void animalsInStorehouse() {
         
       System.out.println("\nHere are the animals you have in the storehouse: ");
-      Game theGame = CityOfAaron.getTheGame();
-      ArrayList<ListItem> animals = theGame.getAnimals();      
-      for (ListItem animalsname: animals){
-      System.out.println(animalsname.getName());
+      ArrayList<ListItem> animals = theGame.getAnimals();    
+      
+      for(ListItem ani : animals){
+      System.out.println("\t" + ani.getName() + ": " + ani.getNumber() + "\n");
       }
-      for (ListItem animalsnumber: animals){
-      System.out.println(animalsnumber.getNumber());
-      }
+
     }
      
     // The toolsInStorehouse method
