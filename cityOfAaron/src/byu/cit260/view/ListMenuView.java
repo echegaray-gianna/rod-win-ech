@@ -122,9 +122,9 @@ public class ListMenuView extends MenuView {
     public void authorsOfGame() {
 
         System.out.println("\nAuthors of this game are:"
-                + "Hernan Rodriguez"
-                + "Gianna Echegaray"
-                + "Karly Winters");
+                + "\nHernan Rodriguez"
+                + "\nGianna Echegaray"
+                + "\nKarly Winters");
     }
     
 }

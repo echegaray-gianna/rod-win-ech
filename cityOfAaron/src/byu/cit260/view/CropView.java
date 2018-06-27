@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The CropView.
+ * Authors: Gianna Echegaray, Hernan Rodriguez, and Karly Winters. 
+ * Date last modified: 6/26/18.
  */
 package byu.cit260.view;
 

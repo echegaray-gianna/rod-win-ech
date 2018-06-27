@@ -132,8 +132,8 @@ public class GameControl {
         //**************************** FARM ******************************
         // define the string for a farm land location
         String farmland = "\nYou are in the fertile farmland."
-                + "\nThe river nurishes the soil here from the river "
-                + "\nflooding in the spring. Wheat can be planted here.";
+                + "\nThe river nurishes the soil here,"
+                + "\nflooding it in the spring. Wheat can be planted here.";
 
         // set a farmland location with a hint
         loc = new Location();
@@ -166,8 +166,7 @@ public class GameControl {
         //**************************** ROAD ******************************
         // define the string for a road location
         String road = "\nYou are on the road."
-                + "\nIn the springthis low farmland floods and is covered with rich"
-                + "\nnew soil. Wheat is planted as far as you can see.";
+                + "\nIn the springthis low farmland floods and is covered with rich";
 
         // set a road location with a hint
         loc = new Location();
@@ -183,8 +182,8 @@ public class GameControl {
         //**************************** FOREST ******************************
         // define the string for a forest location
         String forest = "\nYou are in the forest."
-                + "\nIn the spring this low farmland floods and is covered with rich"
-                + "\nnew soil. Wheat is planted as far as you can see.";
+                + "\nThere's lots of trees. Enjoy the view.";
+      
 
         // set a road location with a hint
         loc = new Location();
@@ -195,7 +194,6 @@ public class GameControl {
         }
         
         //**************************** FOREST ******************************
-        
         
         // Must go at the end.
         theGame.setMap(theMap);
