@@ -21,7 +21,7 @@ public class ListMenuView extends MenuView {
     public ListMenuView(){
             
                 super (
-                        "n"
+                        "\n"
                         + "---------------     --------------\n"
                         + " CITY OF AARON: DISPLAY LIST MENU  \n"
                         + "---------------     --------------\n"
@@ -100,8 +100,15 @@ public class ListMenuView extends MenuView {
     // =================================== 
     public void provisionsInStorehouse () {
        
-        System.out.println("\nHere are provisions you have in the storehouse: ");  
-        // Need to link CropData information with string above.
+        System.out.println("\nHere are provisions you have in the storehouse: \n");  
+        ArrayList<ListItem> provisions = theGame.getProvisions();
+        
+        //Make a for loop iterating for each item in the array
+        for( ListItem item : provisions){
+            //Display the item name and the amount
+            // the \t gives space in front of the list item
+            System.out.println("\t" + item.getName() + ": " + item.getNumber() + "\n");
+        }
     }
 
     // The manageTheCrops method

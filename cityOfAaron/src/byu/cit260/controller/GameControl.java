@@ -32,9 +32,15 @@ public class GameControl {
         thePlayer.setName(pName);
         theGame.setThePlayer(thePlayer);
 
-        // create the list of tools
-        //create the list of provisions
-        // create the Locations and the Map object        
+        //create the list of provisions      
+        // call all of the methods to creat the objects
+        createCropDataObject();
+        createAnimalList();
+        createToolList();
+        // provisions
+        createMap();
+        
+        
     }
 
     // create the CropData object
@@ -80,6 +86,18 @@ public class GameControl {
         tools.add(new ListItem("drill thing", 4));
 
         theGame.setTools(tools);
+    }
+    
+    // create the list of tools
+    public static void createProvisionsList() {
+        ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+
+        provisions.add(new ListItem("Cheese", 120));
+        provisions.add(new ListItem("flower", 30));
+        provisions.add(new ListItem("milk", 70));
+        provisions.add(new ListItem("salt", 400));
+
+        theGame.setProvisions(provisions);
     }
 
     // The createMap method

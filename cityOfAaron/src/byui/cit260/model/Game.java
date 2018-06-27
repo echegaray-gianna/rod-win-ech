@@ -24,6 +24,7 @@ public class Game implements Serializable{
     private ArrayList<ListItem> items = new ArrayList<>();
     private ArrayList<ListItem> animals = new ArrayList<>();
     private ArrayList<ListItem> tools = new ArrayList<>();
+    private ArrayList<ListItem> provisions = new ArrayList<>();
     private Map map;
     
     public Game() {
@@ -78,6 +79,14 @@ public class Game implements Serializable{
 
     public void setTools(ArrayList<ListItem> tools) {
         this.tools = tools;
+    }
+
+    public ArrayList<ListItem> getProvisions() {
+        return provisions;
+    }
+
+    public void setProvisions(ArrayList<ListItem> provisions) {
+        this.provisions = provisions;
     }
     
     

@@ -65,6 +65,7 @@ public class GameMenuView extends MenuView {
     public void viewTheMap() {
 
         System.out.println("\nView some map options.");
+        
 
     }
 
