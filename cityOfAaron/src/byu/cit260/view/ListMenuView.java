@@ -54,8 +54,7 @@ public class ListMenuView extends MenuView {
                 authorsOfGame();
                 break;
             case 5: //ReturnToTheGameMenu
-               ReturnToTheGameMenu();
-               break;
+               return;
         }
     }
         
@@ -106,9 +105,5 @@ public class ListMenuView extends MenuView {
                 + "Karly Winters");
     }
     
-    //Return to the main menu
-    public void ReturnToTheGameMenu() {
-        GameMenuView gmv = new GameMenuView();
-         gmv.displayMenu();
-    }   
+
     }  
