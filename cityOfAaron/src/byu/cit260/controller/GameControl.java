@@ -154,8 +154,8 @@ public class GameControl {
 
         // set a town location with a hint
         loc = new Location();
-        loc.setDescription(town + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("!!!");
+        loc.setDescription(town);
+        loc.setSymbol("$$$");
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 1, loc);
         }
@@ -171,8 +171,8 @@ public class GameControl {
 
         // set a road location with a hint
         loc = new Location();
-        loc.setDescription(road + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("!!!");
+        loc.setDescription(road);
+        loc.setSymbol("***");
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 2, loc);
         }
@@ -180,7 +180,7 @@ public class GameControl {
         //**************************** ROAD ******************************
 
         
-         //**************************** FOREST ******************************
+        //**************************** FOREST ******************************
         // define the string for a forest location
         String forest = "\nYou are on the fertile banks of the River."
                 + "\nIn the springthis low farmland floods and is covered with rich"
@@ -188,8 +188,8 @@ public class GameControl {
 
         // set a road location with a hint
         loc = new Location();
-        loc.setDescription(forest + "\nOne bushel will plant two acres of wheat.");
-        loc.setSymbol("!!!");
+        loc.setDescription(forest);
+        loc.setSymbol("???");
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 3, loc);
         }
