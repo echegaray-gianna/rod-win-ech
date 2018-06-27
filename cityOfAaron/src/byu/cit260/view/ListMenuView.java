@@ -108,7 +108,7 @@ public class ListMenuView extends MenuView {
         for( ListItem item : provisions){
             //Display the item name and the amount
             // the \t gives space in front of the list item
-            System.out.println("\t" + item.getName() + ": " + item.getNumber() + "\n");
+            System.out.println("\t" + item.getName() + ": " + item.getNumber());
         }
     }
 
