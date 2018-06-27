@@ -70,17 +70,17 @@ public class ListMenuView extends MenuView {
  
     public void animalsInStorehouse() {
         
-      System.out.println("\nHere are the animals you have in the storehouse: ");  
-      ArrayList<ListItem> animals = theGame.getAnimals();
-      
-      // now you have to make a for loop to go through the array and print each element
-      //down here...
-      
-      
-      
+      System.out.println("\nHere are the animals you have in the storehouse: ");
+      Game theGame = CityOfAaron.getTheGame();
+      ArrayList<ListItem> animals = theGame.getAnimals();      
+      for (ListItem animalsname: animals){
+      System.out.println(animalsname.getName());
+      }
+      for (ListItem animalsnumber: animals){
+      System.out.println(animalsnumber.getNumber());
+      }
     }
-    
-    
+     
     // The toolsInStorehouse method
     // Purpose: adds user interactivity to the game
     // Parameters: none
@@ -89,7 +89,6 @@ public class ListMenuView extends MenuView {
     public void toolsInStorehouse() {
        
         System.out.println("\nHere are the tools you have in the storehouse: ");
-        
         
     }
     
@@ -100,7 +99,7 @@ public class ListMenuView extends MenuView {
     // =================================== 
     public void provisionsInStorehouse () {
        
-        System.out.println("\nHere are provisions you have in the storehouse: \n");  
+        System.out.println("\nHere are provisions you have in the storehouse: \n");
         ArrayList<ListItem> provisions = theGame.getProvisions();
         
         //Make a for loop iterating for each item in the array
@@ -125,5 +124,5 @@ public class ListMenuView extends MenuView {
                 + "Karly Winters");
     }
     
-
-    }  
+}
+      
