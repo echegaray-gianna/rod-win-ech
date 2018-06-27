@@ -102,6 +102,7 @@ public class ListMenuView extends MenuView {
         System.out.println("\nHere are provisions you have in the storehouse: \n");
         ArrayList<ListItem> provisions = theGame.getProvisions();
         
+                
         //Make a for loop iterating for each item in the array
         for( ListItem item : provisions){
             //Display the item name and the amount
