@@ -68,6 +68,19 @@ public class GameControl {
 
         theGame.setAnimals(animals);
     }
+    
+    
+    // create the list of tools
+    public static void createToolList() {
+        ArrayList<ListItem> tools = new ArrayList<ListItem>();
+
+        tools.add(new ListItem("hammer", 12));
+        tools.add(new ListItem("screwdriver", 3));
+        tools.add(new ListItem("axe", 7));
+        tools.add(new ListItem("drill thing", 4));
+
+        theGame.setTools(tools);
+    }
 
     // The createMap method
     // Purpose: creates the location objects and the map
@@ -78,8 +91,8 @@ public class GameControl {
         // refer to the Map constructor
         Map theMap = new Map(MAX_ROW, MAX_COL);
 
-        // create a string that will go in the Location objects
-        // that contain the river
+
+        //*************************** RIVER ******************************
         String river = "\nYou are on the River. The river is the source"
                 + "\nof life for our city. The river marks the eastern "
                 + "\nboundary of the city - it is wilderness to the East.";
@@ -95,6 +108,9 @@ public class GameControl {
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 4, loc);
         }
+        //**************************** RIVER ******************************
+        
+        //**************************** FARM ******************************
         // define the string for a farm land location
         String farmland = "\nYou are on the fertile banks of the River."
                 + "\nIn the springthis low farmland floods and is covered with rich"
@@ -104,8 +120,64 @@ public class GameControl {
         loc = new Location();
         loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("!!!");
-        theMap.setLocation(0, 2, loc);
+        for (int i = 0; i < MAX_ROW; i++) {
+            theMap.setLocation(i, 0, loc);
+        }
+        
+        //**************************** FARM ******************************
+        
+        
+        //**************************** TOWN ******************************
+        // define the string for a farm land location
+        String town = "\nYou are on the fertile banks of the River."
+                + "\nIn the springthis low farmland floods and is covered with rich"
+                + "\nnew soil. Wheat is planted as far as you can see.";
 
+        // set a town location with a hint
+        loc = new Location();
+        loc.setDescription(town + "\nOne bushel will plant two acres of wheat.");
+        loc.setSymbol("!!!");
+        for (int i = 0; i < MAX_ROW; i++) {
+            theMap.setLocation(i, 1, loc);
+        }
+        
+        //**************************** TOWN ******************************
+        
+        
+        //**************************** ROAD ******************************
+        // define the string for a road location
+        String road = "\nYou are on the fertile banks of the River."
+                + "\nIn the springthis low farmland floods and is covered with rich"
+                + "\nnew soil. Wheat is planted as far as you can see.";
+
+        // set a road location with a hint
+        loc = new Location();
+        loc.setDescription(road + "\nOne bushel will plant two acres of wheat.");
+        loc.setSymbol("!!!");
+        for (int i = 0; i < MAX_ROW; i++) {
+            theMap.setLocation(i, 2, loc);
+        }
+        
+        //**************************** ROAD ******************************
+
+        
+         //**************************** FOREST ******************************
+        // define the string for a forest location
+        String forest = "\nYou are on the fertile banks of the River."
+                + "\nIn the springthis low farmland floods and is covered with rich"
+                + "\nnew soil. Wheat is planted as far as you can see.";
+
+        // set a road location with a hint
+        loc = new Location();
+        loc.setDescription(forest + "\nOne bushel will plant two acres of wheat.");
+        loc.setSymbol("!!!");
+        for (int i = 0; i < MAX_ROW; i++) {
+            theMap.setLocation(i, 3, loc);
+        }
+        
+        //**************************** FOREST ******************************
+        
+        
         // Must go at the end.
         theGame.setMap(theMap);
     }

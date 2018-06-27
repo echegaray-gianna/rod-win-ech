@@ -22,7 +22,9 @@ public class Game implements Serializable{
     private Player thePlayer;
     private CropData cropData;
     private ArrayList<ListItem> items = new ArrayList<>();
-    
+    private ArrayList<ListItem> animals = new ArrayList<>();
+    private ArrayList<ListItem> tools = new ArrayList<>();
+    private Map map;
     
     public Game() {
     }
@@ -53,5 +55,31 @@ public class Game implements Serializable{
     public void setItems(ArrayList<ListItem> items) {
         this.items = items;
     }
+
+    public ArrayList<ListItem> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(ArrayList<ListItem> animals) {
+        this.animals = animals;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public ArrayList<ListItem> getTools() {
+        return tools;
+    }
+
+    public void setTools(ArrayList<ListItem> tools) {
+        this.tools = tools;
+    }
+    
+    
 
  }

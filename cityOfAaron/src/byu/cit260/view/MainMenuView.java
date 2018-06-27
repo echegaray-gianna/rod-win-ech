@@ -7,9 +7,8 @@ package byu.cit260.view;
 
 import java.util.Scanner;
 import byu.cit260.cityOfAaron.CityOfAaron;
-import byui.cit260.model.CropData;
-import byui.cit260.model.Game;
-import byui.cit260.model.Player;
+import byu.cit260.controller.GameControl;
+import byui.cit260.model.*;
 
 /**
  *

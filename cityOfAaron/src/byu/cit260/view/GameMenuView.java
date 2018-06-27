@@ -9,11 +9,10 @@ package byu.cit260.view;
  *
  * @author Gianna
  */
-public class GameMenuView extends MenuView{
-   
+public class GameMenuView extends MenuView {
 
     public GameMenuView() {
-        super( 
+        super(
                 "\n"
                 + "-------------       --------------\n"
                 + "* CITY OF AARON:  GAME MENU  *\n"
@@ -22,11 +21,11 @@ public class GameMenuView extends MenuView{
                 + " 2 - View / print a list\n"
                 + " 3 - Move to a new location\n"
                 + " 4 - Manage the crops\n"
-                + " 5 - Return to the Main menu\n",                
+                + " 5 - Return to the Main menu\n",
                 5
-                );  
+        );
     }
-    
+
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
@@ -53,20 +52,20 @@ public class GameMenuView extends MenuView{
                 manageTheCrops();
                 break;
             case 5: //ReturnToTheMainMenu
-               return;
-               
+                return;
+
         }
-    }  
-   
+    }
+
     // The viewTheMap method
     // Purpose:  add some interest and creativity to the game
     // Parameters: none
     // Returns: none
     // =================================== 
     public void viewTheMap() {
-        
-      System.out.println("\nView some map options.");  
-        
+
+        System.out.println("\nView some map options.");
+
     }
 
     // The viewPrintAlist method
@@ -75,34 +74,32 @@ public class GameMenuView extends MenuView{
     // Returns: none
     // =================================== 
     public void viewPrintAlist() {
-       
+
         //HERE!
- 
         //create a new displayPrintListMenu
         ListMenuView lmv = new ListMenuView();
-    
+
         // call the displayMenu()
         // Before changing to inherit and name, it was displayListMenuView
         lmv.displayMenu();
     }
-    
-    
+
     // The moveToANewLocation method
     // Purpose:  provides the user with a set of list options
     // Parameters: none
     // Returns: none
     // =================================== 
-    public void moveToANewLocation () {
-        
-       // Prompt for and get the user’s name.
+    public void moveToANewLocation() {
+
+        // Prompt for and get the user’s name.
         String location;
         System.out.println("\nPlease enter your coordinates: ");
-        location = keyboard.next();   
-       
-      // Display new location description
-        System.out.println("\nCoordinates: " + location  
-                          + ". In this location"
-                          + "...");
+        location = keyboard.next();
+
+        // Display new location description
+        System.out.println("\nCoordinates: " + location
+                + ". In this location"
+                + "...");
     }
 
     // The manageTheCrops method

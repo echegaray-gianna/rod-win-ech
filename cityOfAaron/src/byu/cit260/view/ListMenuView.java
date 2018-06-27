@@ -6,12 +6,17 @@
 
 package byu.cit260.view;
 
-import java.util.Scanner;
+import byu.cit260.cityOfAaron.CityOfAaron;
+import byui.cit260.model.Game;
+import byui.cit260.model.ListItem;
+import java.util.ArrayList;
 
 
 
 
 public class ListMenuView extends MenuView {
+    
+    private static Game theGame = CityOfAaron.getTheGame();
    
     public ListMenuView(){
             
@@ -66,7 +71,13 @@ public class ListMenuView extends MenuView {
     public void animalsInStorehouse() {
         
       System.out.println("\nHere are the animals you have in the storehouse: ");  
-        
+      ArrayList<ListItem> animals = theGame.getAnimals();
+      
+      // now you have to make a for loop to go through the array and print each element
+      //down here...
+      
+      
+      
     }
     
     
@@ -78,6 +89,8 @@ public class ListMenuView extends MenuView {
     public void toolsInStorehouse() {
        
         System.out.println("\nHere are the tools you have in the storehouse: ");
+        
+        
     }
     
     // The provisionsInStorehouse method
