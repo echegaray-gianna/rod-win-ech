@@ -131,9 +131,9 @@ public class GameControl {
         
         //**************************** FARM ******************************
         // define the string for a farm land location
-        String farmland = "\nYou are on the fertile banks of the River."
-                + "\nIn the springthis low farmland floods and is covered with rich"
-                + "\nnew soil. Wheat is planted as far as you can see.";
+        String farmland = "\nYou are in the fertile farmland."
+                + "\nThe river nurishes the soil here from the river "
+                + "\nflooding in the spring. Wheat can be planted here.";
 
         // set a farmland location with a hint
         loc = new Location();
@@ -148,9 +148,9 @@ public class GameControl {
         
         //**************************** TOWN ******************************
         // define the string for a farm land location
-        String town = "\nYou are on the fertile banks of the River."
-                + "\nIn the springthis low farmland floods and is covered with rich"
-                + "\nnew soil. Wheat is planted as far as you can see.";
+        String town = "\nYou are in a town."
+                + "\nThis busltling place is full of activity."
+                + "\nThis is also where some of your people reside.";
 
         // set a town location with a hint
         loc = new Location();
@@ -165,14 +165,14 @@ public class GameControl {
         
         //**************************** ROAD ******************************
         // define the string for a road location
-        String road = "\nYou are on the fertile banks of the River."
+        String road = "\nYou are on the road."
                 + "\nIn the springthis low farmland floods and is covered with rich"
                 + "\nnew soil. Wheat is planted as far as you can see.";
 
         // set a road location with a hint
         loc = new Location();
         loc.setDescription(road);
-        loc.setSymbol("***");
+        loc.setSymbol("===");
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 2, loc);
         }
@@ -182,14 +182,14 @@ public class GameControl {
         
         //**************************** FOREST ******************************
         // define the string for a forest location
-        String forest = "\nYou are on the fertile banks of the River."
-                + "\nIn the springthis low farmland floods and is covered with rich"
+        String forest = "\nYou are in the forest."
+                + "\nIn the spring this low farmland floods and is covered with rich"
                 + "\nnew soil. Wheat is planted as far as you can see.";
 
         // set a road location with a hint
         loc = new Location();
         loc.setDescription(forest);
-        loc.setSymbol("???");
+        loc.setSymbol("^^^");
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 3, loc);
         }
