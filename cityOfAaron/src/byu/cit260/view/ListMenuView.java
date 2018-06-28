@@ -71,14 +71,12 @@ public class ListMenuView extends MenuView {
     public void animalsInStorehouse() {
         
       System.out.println("\nHere are the animals you have in the storehouse: ");
-      Game theGame = CityOfAaron.getTheGame();
-      ArrayList<ListItem> animals = theGame.getAnimals();      
-      for (ListItem animalsname: animals){
-      System.out.println(animalsname.getName());
+      ArrayList<ListItem> animals = theGame.getAnimals();    
+      
+      for(ListItem ani : animals){
+      System.out.println("\t" + ani.getName() + ": " + ani.getNumber() + "\n");
       }
-      for (ListItem animalsnumber: animals){
-      System.out.println(animalsnumber.getNumber());
-      }
+
     }
      
     // The toolsInStorehouse method
@@ -89,7 +87,11 @@ public class ListMenuView extends MenuView {
     public void toolsInStorehouse() {
        
         System.out.println("\nHere are the tools you have in the storehouse: ");
+        ArrayList<ListItem> tools = theGame.getTools();
         
+        for(ListItem tool : tools){
+            System.out.println("\t" + tool.getName() + ": " + tool.getNumber() + "\n");
+        }
     }
     
     // The provisionsInStorehouse method
@@ -120,9 +122,9 @@ public class ListMenuView extends MenuView {
     public void authorsOfGame() {
 
         System.out.println("\nAuthors of this game are:"
-                + "Hernan Rodriguez"
-                + "Gianna Echegaray"
-                + "Karly Winters");
+                + "\nHernan Rodriguez"
+                + "\nGianna Echegaray"
+                + "\nKarly Winters");
     }
     
 }
