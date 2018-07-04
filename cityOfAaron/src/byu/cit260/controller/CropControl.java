@@ -4,7 +4,7 @@
 //Date last modified: May 2018
 package byu.cit260.controller;
 
-import byu.cit260.view.CropException;
+import Exceptions.CropException;
 import byui.cit260.model.CropData;
 import java.util.Random;
 
@@ -35,16 +35,16 @@ public class CropControl {
     //Returns: the number of acres owned after the sale
     //Pre-conditions: acres to sell must be positive
     //                and <= acresOwned
-    public static int sellLand(int landPrice, int acresToSell, CropData cropData) {
+    public static void sellLand(int landPrice, int acresToSell, CropData cropData)throws Exception {
         //if acresToSell < 0, return -1
         if (acresToSell < 0) {
-            return -1;
+           throw new CropException("You can't acquire a negative amount.");
         }
 
         //if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
         if (acresToSell > owned) {
-            return -1;
+          throw new CropException("You can't sell more land than what you own.");
         }
 
         //acresOwned = acresOwned - acresToSell
@@ -55,9 +55,6 @@ public class CropControl {
         int wheat = cropData.getWheatInStore();
         wheat -= (acresToSell * landPrice);
         cropData.setWheatInStore(wheat);
-
-        //return acresOwned
-        return owned;
     }
 
     //The buyLand method					

@@ -2,7 +2,7 @@
  * This holds the exception classes. 
  * Authors: Hernan Rodriguez, Gianna Echegaray, and Karly Winters
  */
-package byu.cit260.view;
+package Exceptions;
 
 /**
  *
