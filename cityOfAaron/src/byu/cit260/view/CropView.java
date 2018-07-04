@@ -38,11 +38,25 @@ public class CropView {
         //  Get the user’s input and save it.
         int toBuy;
         toBuy = keyboard.nextInt();
-
+    boolean paramsNotOkay;
+    do {
+        paramsNotOkay = false;
+        System.out.println("\nHow many acres of land do you wish to buy? ");  
+        toBuy = keyboard.nextInt();
+  
+    try {
         // Call the buyLand( ) method in the control layer to buy the land
         CropControl.buyLand(toBuy, price, cropData);
     }
-
+    catch(CropException e)
+    {
+        System.out.println("I am sorry master, I cannot do this.");
+        System.out.println(e.getMessage());
+        paramsNotOkay = true;
+    }
+    } while(paramsNotOkay);
+    
+    }
     // The runCropsView method()
     // Purpose: runs the Hamurabi game
     // Parameters: none

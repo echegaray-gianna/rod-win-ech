@@ -59,7 +59,7 @@ public class ListMenuView extends MenuView {
                 authorsOfGame();
                 break;
             case 5: //ReturnToTheGameMenu
-               return;
+               return ;
         }
     }
         

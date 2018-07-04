@@ -4,6 +4,7 @@
 //Date last modified: May 2018
 package byu.cit260.controller;
 
+import byu.cit260.view.CropException;
 import byui.cit260.model.CropData;
 import java.util.Random;
 
@@ -68,23 +69,23 @@ public class CropControl {
     //Pre-Conditions: acres to buy must be positive, 
     //                 have enough population and 
     //                 have enough wheat for the purchase  					
-    public static int buyLand(int acresToBuy, int pricePerAcre, CropData cropData) {
+    public static void buyLand(int acresToBuy, int pricePerAcre, CropData cropData)throws CropException {
 //      if acresToBuy < 0, THEN RETURN -1
         if (acresToBuy < 0) {
-            return -1;
+            throw new CropException("A negative value was input.");
         }
 
 //      if ( wheatInStore <  acresToBuy * pricePerAcre) THEN RETURN -1
         int wheat = cropData.getWheatInStore();
         if (wheat < acresToBuy * pricePerAcre) {
-            return -1;
+            throw new CropException("There is insufficient wheat to buy this much land.");
         }
 
 //      if ( population * 10 <  (acresToBuy + acresOwned  ) ) THEN RETURN -1
         int population = cropData.getPopulation();
         int acresOwned = cropData.getAcresOwned();
         if (population * 10 < (acresToBuy + acresOwned)) {
-            return -1;
+            throw new CropException ("Not enough people for the amount of land you're trying to buy.");
         }
 
 //        acresOwned += acresToBuy;
@@ -94,8 +95,6 @@ public class CropControl {
 //      wheatInStore -= ( acresToBuy * pricePerAcre )
         wheat -= (acresToBuy * pricePerAcre);
         cropData.setWheatInStore(wheat);
-
-        return acresOwned;
     }
 
     public static int feedPeople(int bushelsOfGrain, CropData cropData) {

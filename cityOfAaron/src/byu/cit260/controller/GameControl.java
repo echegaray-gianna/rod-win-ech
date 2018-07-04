@@ -87,9 +87,8 @@ public class GameControl {
         tools.add(new ListItem("drill thing", 4));
 
         theGame.setTools(tools);
-    }
+}
     
-    // create the list of tools
     public static void createProvisionsList() {
         ArrayList<ListItem> provisions = new ArrayList<ListItem>();
 
@@ -198,5 +197,7 @@ public class GameControl {
         // Must go at the end.
         theGame.setMap(theMap);
     }
-
+  
 }
+
+
