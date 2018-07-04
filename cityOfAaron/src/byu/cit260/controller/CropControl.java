@@ -35,7 +35,7 @@ public class CropControl {
     //Returns: the number of acres owned after the sale
     //Pre-conditions: acres to sell must be positive
     //                and <= acresOwned
-    public static void sellLand(int landPrice, int acresToSell, CropData cropData)throws Exception {
+    public static void sellLand(int landPrice, int acresToSell, CropData cropData)throws CropException{
         //if acresToSell < 0, return -1
         if (acresToSell < 0) {
            throw new CropException("You can't acquire a negative amount.");

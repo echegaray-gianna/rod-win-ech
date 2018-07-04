@@ -51,7 +51,7 @@ public class CropView {
                 // Call the sellLand( ) method in the control layer to sell the land
                 CropControl.buyLand(toBuy, price, cropData);   
            } 
-            catch (Exception e) {
+            catch (CropException e) {
                 System.out.println("I am sorry master, I cannot do this.");
                 System.out.println(e.getMessage());
                 paramsNotOkay = true;
