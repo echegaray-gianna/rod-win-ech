@@ -94,16 +94,16 @@ public class CropControl {
         cropData.setWheatInStore(wheat);
     }
 
-    public static int feedPeople(int bushelsOfGrain, CropData cropData) {
+    public static void feedPeople(int bushelsOfGrain, CropData cropData) throws CropException {
 
 //      IF ( wheatForPeople < 0) THEN return "Enter a new number"
         if (bushelsOfGrain < 0) {
-            return -1;
+            throw new CropException("There amount is insufficient, please indicate a positive number");
         }
 //      IF ( CropData.wheatInStore < wheatForPeople ) THEN return "Enter a new number"
         int inStore = cropData.getWheatInStore();
         if (inStore < bushelsOfGrain) {
-            return -1;
+            throw new CropException("There is insufficient bushels of wheat for the amount indicated.");
         }
 //      wheatInStorage =  wheatInStorage - bushelsOfGrain
 //      wheatForPeople = wheatForPeople + bushelsOfGrain
@@ -112,8 +112,6 @@ public class CropControl {
         wheatForPeople += bushelsOfGrain;
         cropData.setWheatInStore(inStore);
         cropData.setWheatForPeople(wheatForPeople);
-//      RETURN wheatInStorage
-        return inStore;
     }
 
     // The plantCrops method					

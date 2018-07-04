@@ -91,22 +91,15 @@ public class CropView {
     public static void sellLandView() throws Exception {
         // Get the cost of land for this round.
         int price = CropControl.calcLandCost();
-
+        int toSell;
         // Prompt the user to enter the number of acres to sell
         System.out.format("Land is selling for %d bushels per acre.%n", price);
-        System.out.print("\nHow many acres of new land do you want sell? ");
-
-        //  Get the user’s input and save it.
-        int toSell;
-        toSell = keyboard.nextInt();
-
-        // Call the sellLand( ) method in the control layer to sell the land
-        CropControl.sellLand(price, toSell, cropData);
 
         boolean paramsNotOkay;
         do {
             paramsNotOkay = false;
             System.out.println("\nHow many acres of land do you want to sell? ");
+            toSell = keyboard.nextInt();
             try {
                 // Call the sellLand( ) method in the control layer to buy the land
                 CropControl.sellLand(price, toSell, cropData);
@@ -147,16 +140,25 @@ public class CropView {
     // Returns: none
     public static void feedPeopleView() {
 
-        // Prompt the user to enter the number of bushels of grain want to give 
-        // to the people
-        System.out.print("\nHow many bushels of grain do you want to give to the people? ");
-
-        //  Get the user’s input and save it.
+        boolean paramsNotOkay;
         int bushelsOfGrain;
-        bushelsOfGrain = keyboard.nextInt();
-
-        // Call thefeedPeopleView() method in the control layer 
-        CropControl.feedPeople(bushelsOfGrain, cropData);
+        
+        do {    
+            paramsNotOkay = false;
+            // Prompt the user to enter the number of bushels of grain want to give 
+            // to the people
+            System.out.print("\nHow many bushels of grain do you want to give to the people? ");
+            //  Get the user’s input and save it.
+            bushelsOfGrain = keyboard.nextInt();
+            try {
+                // Call thefeedPeopleView() method in the control layer 
+                CropControl.feedPeople(bushelsOfGrain, cropData);
+            } catch (CropException e) {
+                System.out.println("I am sorry master, an error ocurred");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        } while (paramsNotOkay);
 
     }
 
