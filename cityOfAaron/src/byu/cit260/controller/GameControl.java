@@ -59,7 +59,7 @@ public class GameControl {
         theCrops.setHarvest(3000);
         theCrops.setOfferingBushels(300);
         theCrops.setAcresPlanted(1000);
-
+                
         theGame.setCropData(theCrops);
     }
 
