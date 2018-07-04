@@ -5,6 +5,9 @@
 //-------------------------------------------------------------
 package byu.cit260.view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Gianna
@@ -48,8 +51,14 @@ public class GameMenuView extends MenuView {
             case 3: // moveToANewLocation
                 moveToANewLocation();
                 break;
-            case 4:// manageTheCrops
+            case 4:{
+            try {
+                // manageTheCrops
                 manageTheCrops();
+            } catch (Exception ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 5: //ReturnToTheMainMenu
                 return;
@@ -109,7 +118,7 @@ public class GameMenuView extends MenuView {
     // Parameters: none
     // Returns: none
     // =================================== 
-    public void manageTheCrops() {
+    public void manageTheCrops() throws Exception {
 
         CropView.runCropsView();
     }
