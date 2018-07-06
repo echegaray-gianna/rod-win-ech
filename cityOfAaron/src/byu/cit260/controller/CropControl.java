@@ -122,16 +122,16 @@ public class CropControl {
     // Pre-Conditions: acres to plant must be positive, 
     //                have enough wheat to buy and land to plant.
     
-    public static int plantCrops(int acresToPlant, CropData cropData) {
+    public static void plantCrops(int acresToPlant, CropData cropData) throws CropException {
         //if acresToPlant < 0, THEN RETURN "-1"
         if (acresToPlant < 0) {
-            return -1;
+           throw new CropException("You can't acquire a negative amount.");
         }
 
         //if ( acresOwned <  acresToPlant , THEN RETURN "-1"      
         int acresOwned = cropData.getAcresOwned();      
         if (acresOwned < acresToPlant) {
-            return -1;
+             throw new CropException("You can't plant more land than what you own.");
         }
 
         //wheatNeededToPlant = acresToPlant / 2
@@ -140,7 +140,7 @@ public class CropControl {
         //if wheatInStore <  wheatNeededToPlant, THEN RETURN "-1"      
         int wheatInStore = cropData.getWheatInStore();
         if (wheatInStore < wheatNeededToPlant) {
-            return -1;
+             throw new CropException("You dont have enough");
         }
 
         //wheatInStore -=  wheatNeededToPlant
@@ -150,8 +150,7 @@ public class CropControl {
         //acresPlanted = acresToPlant   
         cropData.setAcresPlanted(acresToPlant);
 
-        //RETURN acresPlanted   
-        return wheatInStore;
+
     }
     // The setOffering method					
     // Purpose: Make sure the offering is positive but not over 100%.										

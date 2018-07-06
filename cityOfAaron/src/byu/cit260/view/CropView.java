@@ -175,7 +175,7 @@ public class CropView {
         // Call the plantCrops method. 
         CropControl.plantCrops(toPlant, cropData);
     } catch (Exception e) {
-System.out.println("I am sorry master, an error ocurred");
+      System.out.println("Sorry! but you cant do this!");
                 System.out.println(e.getMessage());
                 paramsNotOkay = true;
             }
