@@ -157,22 +157,21 @@ public class CropControl {
     // Purpose: Make sure the offering is positive but not over 100%.										
     // @param pay offering method				
     // @param a reference to the CropData object					
-    // @return pay offering					
+    // @return nothing.					
     // Pre-Conditions: tithe can't be below 0%,
     //                 tithe can't be above 100%.						
 
-    public static int setOffering(int payOffering, CropData cropData) {
-        // if user input < 0%, THEN RETURN "-1"
+    public static void setOffering(int payOffering, CropData cropData) throws CropException {
+        // if user input < 0%, THEN throw error message.
         if (payOffering < 0) {
-            return -1;
+            throw new CropException("Amount entered is negative. Please enter a positive number.");
         }
-        // if user input > 100%, THEN RETURN "-1"
+        // if user input > 100%, THEN throw error message.
         if (payOffering > 100) {
-            return -1;
+            throw new CropException("The amount you entered is more than what you have. Enter a number less than a 100%.");
         }
         // Save the result.
         cropData.setOffering(payOffering);
-        return payOffering;  
 }
 
 

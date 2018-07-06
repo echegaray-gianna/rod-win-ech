@@ -51,7 +51,7 @@ public class CropView {
                 // Call the sellLand( ) method in the control layer to sell the land
                 CropControl.buyLand(toBuy, price, cropData);   
            } 
-            catch (CropException e) {
+            catch (Exception e) {
                 System.out.println("I am sorry master, I cannot do this.");
                 System.out.println(e.getMessage());
                 paramsNotOkay = true;
@@ -84,6 +84,7 @@ public class CropView {
 //    plantCropsView()
 //    showStarvedView()
 //    displayCropsReportView()
+    
     // The sellLandView method()
     // Purpose: allows the user to sell part of his lands
     // Parameters: none
@@ -105,7 +106,7 @@ public class CropView {
                 CropControl.sellLand(price, toSell, cropData);
             }
 
-        catch (CropException e) {
+        catch (Exception e) {
                 System.out.println("I am sorry master, I cannot do this.");
                 System.out.println(e.getMessage());
                 paramsNotOkay = true;
@@ -153,18 +154,17 @@ public class CropView {
             try {
                 // Call thefeedPeopleView() method in the control layer 
                 CropControl.feedPeople(bushelsOfGrain, cropData);
-            } catch (CropException e) {
+            } catch (Exception e) {
                 System.out.println("I am sorry master, an error ocurred");
                 System.out.println(e.getMessage());
                 paramsNotOkay = true;
             }
         } while (paramsNotOkay);
-
     }
 
     public static void plantCrops() {
         // Get user's input for how much they want to plant.
-        System.out.print("\nHow many acres of land do you want to plant?: ");
+        System.out.print("\nHow many acres of land do you want to plant? ");
         int toPlant;
         toPlant = keyboard.nextInt();
 
@@ -178,4 +178,36 @@ public class CropView {
         // Call the calcStarved method.
         CropControl.calcStarved(cropData);
     }
-}
+    
+    // The setOfferingView method()
+    // Purpose: allows the user to set how much they want to pay in tithes.
+    // Parameters: none
+    // Returns: none
+//     public static void setOfferingView() {
+//
+//        // Prompt the user to enter the amount for their tithe.
+//        System.out.print("\nWhat percent would you like to give for tithes? ");
+//
+//        //  Get the user’s input and save it.
+//        int payOffering;
+//        payOffering = keyboard.nextInt();
+//        boolean paramsNotOkay;
+//        do {
+//            paramsNotOkay = false;
+//            System.out.println("\nHow much would you like to give in tithes in percent?");
+//            payOffering = keyboard.nextInt();
+//
+//            try {
+//                
+//                // Call the setOffering( ) method in the control layer to set the offering. 
+//                CropControl.setOffering(payOffering, cropData);
+//           } 
+//            catch (Exception e) {
+//                System.out.println("I am sorry master, I cannot do this.");
+//                System.out.println(e.getMessage());
+//                paramsNotOkay = true;
+//            }
+//        } while (paramsNotOkay);
+//
+//    }
+  }
