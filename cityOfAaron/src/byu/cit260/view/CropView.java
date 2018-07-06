@@ -163,15 +163,25 @@ public class CropView {
     }
 
     public static void plantCrops() {
+        
+        boolean paramsNotOkay;
+        int toPlant;     
+        do {    
+            paramsNotOkay = false;
         // Get user's input for how much they want to plant.
-        System.out.print("\nHow many acres of land do you want to plant? ");
-        int toPlant;
+        System.out.print("\nHow many acres of land do you want to plant? ");      
         toPlant = keyboard.nextInt();
-
+         try {
         // Call the plantCrops method. 
         CropControl.plantCrops(toPlant, cropData);
+    } catch (Exception e) {
+System.out.println("I am sorry master, an error ocurred");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        } while (paramsNotOkay);
     }
-
+    
     public static void showStarved() {
 
         System.out.print("\nPeople who starved: ");
