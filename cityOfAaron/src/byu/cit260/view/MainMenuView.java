@@ -34,7 +34,6 @@ public class MainMenuView extends MenuView {
         hmv = new HelpMenuView();
     }
 
-
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
@@ -95,10 +94,10 @@ public class MainMenuView extends MenuView {
         System.out.println("\nWelcome " + name + " have fun");
         //Create the game instance
         GameControl.createNewGame(name);
-        
-       // Display the Game menu   
-       GameMenuView gmv = new GameMenuView();
-       gmv.displayMenu();
+
+        // Display the Game menu   
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
         //System.out.println("\nStart new game option selected.");
     }
 
@@ -108,7 +107,14 @@ public class MainMenuView extends MenuView {
     // Returns: none
     // =================================== 
     public void startSavedGame() {
+        // get rid of nl character left in the stream
 
+        // prompt user and get a file path
+        
+        // call the getSavedGame( ) method in the GameControl class to load the game
+        
+        // display the game menu for the loaded game
+        
         System.out.println("\nStart your saved game.");
     }
 
