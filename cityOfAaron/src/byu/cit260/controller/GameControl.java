@@ -12,6 +12,13 @@ package byu.cit260.controller;
 import java.util.ArrayList;
 import byu.cit260.cityOfAaron.CityOfAaron;
 import byui.cit260.model.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GameControl {
 
@@ -39,8 +46,7 @@ public class GameControl {
         createToolList();
         createProvisionsList();
         createMap();
-        
-        
+
     }
 
     // create the CropData object
@@ -59,7 +65,7 @@ public class GameControl {
         theCrops.setHarvest(3000);
         theCrops.setOfferingBushels(300);
         theCrops.setAcresPlanted(1000);
-                
+
         theGame.setCropData(theCrops);
     }
 
@@ -75,8 +81,7 @@ public class GameControl {
 
         theGame.setAnimals(animals);
     }
-    
-    
+
     // create the list of tools
     public static void createToolList() {
         ArrayList<ListItem> tools = new ArrayList<ListItem>();
@@ -87,8 +92,8 @@ public class GameControl {
         tools.add(new ListItem("drill thing", 4));
 
         theGame.setTools(tools);
-}
-    
+    }
+
     public static void createProvisionsList() {
         ArrayList<ListItem> provisions = new ArrayList<ListItem>();
 
@@ -109,7 +114,6 @@ public class GameControl {
         // refer to the Map constructor
         Map theMap = new Map(MAX_ROW, MAX_COL);
 
-
         //*************************** RIVER ******************************
         String river = "\nYou are on the River. The river is the source"
                 + "\nof life for our city. The river marks the eastern "
@@ -127,7 +131,7 @@ public class GameControl {
             theMap.setLocation(i, 4, loc);
         }
         //**************************** RIVER ******************************
-        
+
         //**************************** FARM ******************************
         // define the string for a farm land location
         String farmland = "\nYou are in the fertile farmland."
@@ -141,10 +145,8 @@ public class GameControl {
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 0, loc);
         }
-        
+
         //**************************** FARM ******************************
-        
-        
         //**************************** TOWN ******************************
         // define the string for a farm land location
         String town = "\nYou are in a town."
@@ -158,10 +160,8 @@ public class GameControl {
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 1, loc);
         }
-        
+
         //**************************** TOWN ******************************
-        
-        
         //**************************** ROAD ******************************
         // define the string for a road location
         String road = "\nYou are on the road."
@@ -174,15 +174,12 @@ public class GameControl {
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 2, loc);
         }
-        
-        //**************************** ROAD ******************************
 
-        
+        //**************************** ROAD ******************************
         //**************************** FOREST ******************************
         // define the string for a forest location
         String forest = "\nYou are in the forest."
                 + "\nThere's lots of trees. Enjoy the view.";
-      
 
         // set a road location with a hint
         loc = new Location();
@@ -191,13 +188,41 @@ public class GameControl {
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 3, loc);
         }
-        
+
         //**************************** FOREST ******************************
-        
         // Must go at the end.
         theGame.setMap(theMap);
     }
-  
+
+    public static void getSavedGame(String filePath) {
+        
+        Game theGame = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game)  input.readObject();
+            CityOfAaron.setTheGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }
+    }
+    
+    public static void saveGame(String filePath){
+    
+        Game theGame = CityOfAaron.getTheGame();
+        try (FileOutputStream fops = new FileOutputStream(filePath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(theGame);
+            System.out.println("The game has been saved");
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error saving the game");
+        }
+    }
+
 }
-
-

@@ -98,7 +98,6 @@ public class MainMenuView extends MenuView {
         // Display the Game menu   
         GameMenuView gmv = new GameMenuView();
         gmv.displayMenu();
-        //System.out.println("\nStart new game option selected.");
     }
 
     // The startSavedGame method
@@ -108,14 +107,20 @@ public class MainMenuView extends MenuView {
     // =================================== 
     public void startSavedGame() {
         // get rid of nl character left in the stream
-
+        String filePath;
+        keyboard.nextLine();
+        
         // prompt user and get a file path
+        System.out.println("\nPlease enter a file path: ");
+        filePath = keyboard.nextLine();
         
         // call the getSavedGame( ) method in the GameControl class to load the game
+        GameControl.getSavedGame(filePath);
         
         // display the game menu for the loaded game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
         
-        System.out.println("\nStart your saved game.");
     }
 
     // The displayHelpMenuView method
@@ -134,7 +139,17 @@ public class MainMenuView extends MenuView {
     // =================================== 
     public void displaySaveGameView() {
 
-        System.out.println("\nSaved Game.");
+        // get rid of nl character left in the stream
+        String filePath;
+        keyboard.nextLine();
+        
+        // prompt user and get a file path
+        System.out.println("\nPlease enter a file path: ");
+        filePath = keyboard.nextLine();
+        
+        // call the saveGame( ) method in the GameControl class to save the game
+        GameControl.saveGame(filePath);
+        
     }
 
     public static int payOffering() {

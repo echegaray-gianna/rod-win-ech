@@ -5,11 +5,13 @@
  */
 package byui.cit260.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gianna
  */
-public class Map {
+public class Map implements Serializable{
     // stores the number of rows 
      private int rowCount;  
      
