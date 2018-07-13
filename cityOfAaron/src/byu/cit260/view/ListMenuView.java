@@ -68,15 +68,32 @@ public class ListMenuView extends MenuView {
     // Parameters: none
     // Returns: none
     public void animalsInStorehouse() {
-
-        System.out.println("\nHere are the animals you have in the storehouse: ");
-        ArrayList<ListItem> animals = theGame.getAnimals();
-
-        for (ListItem ani : animals) {
+         int option;
+         try {
+             do{
+                System.out.println("\nIf you like to print the list, please press '1'"
+                                + "\nIf you like to view the list, please press '2'\n");
+                option = keyboard.nextInt();
+                
+                if (option != 1 && option != 2) {
+                    System.out.println("\nPlease try again.");
+                }
+            } while (option != 1 && option != 2);
+                if (option == 1) {
+                    printAnimalsList();
+                } else {
+                   System.out.println("\nHere are the animals you have in the storehouse: "); 
+                   ArrayList<ListItem> animals = theGame.getAnimals();
+    
+                   for (ListItem ani : animals) {
             System.out.println("\t" + ani.getName() + ": " + ani.getNumber() + "\n");
         }
-
     }
+                 } catch (Exception e) {
+             System.out.print("Sorry, an error ocurred!");
+        }
+    }
+
 
     // The toolsInStorehouse method
     // Purpose: adds user interactivity to the game
@@ -168,6 +185,41 @@ public class ListMenuView extends MenuView {
             System.out.println("\nFile printed successfully!");
         } catch (Exception e) {
             System.out.println("There was an error while printing the file.");
+        } finally {
+            // if(output != null) close the file
+            if(printWriter != null){
+                printWriter.close();
+            }
+        }
+    }
+
+    public void printAnimalsList() {
+    // declare a string to hold the file name
+        String filePath;
+        // declare a reference to a PrintWriter object
+        PrintWriter printWriter = null;
+        // prompt the user for a file name, get and save the user’s input
+        keyboard.nextLine();
+        System.out.println("Please indicate the file path: \n");
+        filePath = keyboard.nextLine();
+
+        try {
+            // create the PrintWriter object
+            printWriter = new PrintWriter(filePath);
+            // get a reference to the ArrayList you want to output
+            ArrayList<ListItem> animals = theGame.getAnimals();
+            // output a heading for the report
+            printWriter.println("\tAnimals List");
+            printWriter.println(" ANIMALS\t \tAMOUNT");
+            // use a for loop to get the data from the ArrayList
+            // and output it
+            for( int i = 0; i < animals.size(); i++){
+                printWriter.println( i+1 + "- " + animals.get(i).getName() + "\t \t" + animals.get(i).getNumber());
+            }
+            
+            System.out.println("\nFile printed successfully!");
+        } catch (Exception e) {
+            System.out.println("There was an error while printing the file.Please try again.");
         } finally {
             // if(output != null) close the file
             if(printWriter != null){
