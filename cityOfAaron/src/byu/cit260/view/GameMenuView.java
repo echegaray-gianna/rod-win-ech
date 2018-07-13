@@ -85,7 +85,6 @@ public class GameMenuView extends MenuView {
     // =================================== 
     public void viewPrintAlist() {
 
-        //HERE!
         //create a new displayPrintListMenu
         ListMenuView lmv = new ListMenuView();
 
