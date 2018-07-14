@@ -101,6 +101,35 @@ public class ListMenuView extends MenuView {
     // Returns: none
     public void toolsInStorehouse() {
 
+        int option;
+
+        try {
+            do {
+                System.out.println("Enter 1 to view your list, or enter 2 to print your list.");
+                option = keyboard.nextInt();
+
+                if (option != 1 && option != 2) {
+                    System.out.println("\nWhoops! Try entering one or two if you would like to view or print a list.\n");
+                }
+
+            } while (option != 1 && option != 2);
+            
+            if (option == 1) {
+                printToolsList();
+            } else {
+                System.out.println("\nHere are tools you have in the storehouse: \n");
+                ArrayList<ListItem> tools = theGame.getTools();
+
+                //Make a for loop iterating for each item in the array
+                for (ListItem item : tools) {
+                    //Display the item name and the amount
+                    System.out.println("\t" + item.getName() + ": " + item.getNumber());
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Sorry, there was an error!");
+        }
+
         System.out.println("\nHere are the tools you have in the storehouse: ");
         ArrayList<ListItem> tools = theGame.getTools();
 
@@ -228,4 +257,42 @@ public class ListMenuView extends MenuView {
         }
     }
 
+    public void printToolsList() {
+        
+        // declare a string to hold the file name
+        String filePath;
+        // declare a reference to a PrintWriter object
+        PrintWriter printWriter = null;
+        // prompt the user for a file name, get and save the user’s input
+        keyboard.nextLine();
+        System.out.println("Enter file path.");
+        filePath = keyboard.nextLine();
+
+        try {
+            // create the PrintWriter object
+            printWriter = new PrintWriter(filePath);
+            // get a reference to the ArrayList you want to output
+            ArrayList<ListItem> tools = theGame.getTools();
+            // output a heading for the report
+            printWriter.println("\tTools List");
+            printWriter.println(" DESCRIPTION\t \tAMOUNT");
+
+            // use a for loop to get the data from the ArrayList and output it
+            for( int i = 0; i < tools.size(); i++){
+                printWriter.println( i + 1 + "- " + tools.get(i).getName() + "\t \t" + tools.get(i).getNumber());
+            }
+
+        } catch (Exception e) {
+            // output error message
+                System.out.println("Sorry, there was an error...");
+        } finally {
+            // if(output != null) close the file
+            if (printWriter != null);
+                printWriter.close();
+        }
+    }
+
+    
+    
+    
 }
