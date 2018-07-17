@@ -71,8 +71,7 @@ public class ListMenuView extends MenuView {
          int option;
          try {
              do{
-                System.out.println("\nIf you like to print the list, please press '1'"
-                                + "\nIf you like to view the list, please press '2'\n");
+                System.out.println("\nEnter 1 to print your list, or enter 2 to view your list.\n");
                 option = keyboard.nextInt();
                 
                 if (option != 1 && option != 2) {
@@ -86,7 +85,7 @@ public class ListMenuView extends MenuView {
                    ArrayList<ListItem> animals = theGame.getAnimals();
     
                    for (ListItem ani : animals) {
-            System.out.println("\t" + ani.getName() + ": " + ani.getNumber() + "\n");
+            System.out.println("\t" + ani.getName() + ": " + ani.getNumber());
         }
     }
                  } catch (Exception e) {
@@ -222,6 +221,10 @@ public class ListMenuView extends MenuView {
         }
     }
 
+    // The printanimalsList method
+    // Purpose:  output a report to disk 
+    // Parameters: none
+    // Returns: none
     public void printAnimalsList() {
     // declare a string to hold the file name
         String filePath;

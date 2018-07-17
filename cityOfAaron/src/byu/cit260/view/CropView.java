@@ -49,7 +49,7 @@ public class CropView {
                 CropControl.buyLand(toBuy, price, cropData);   
            } 
             catch (Exception e) {
-                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println("I am sorry, you cannot do this.");
                 System.out.println(e.getMessage());
                 paramsNotOkay = true;
             }
@@ -104,7 +104,7 @@ public class CropView {
             }
 
         catch (Exception e) {
-                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println("I am sorry, you cannot do this.");
                 System.out.println(e.getMessage());
                 paramsNotOkay = true;
             }
