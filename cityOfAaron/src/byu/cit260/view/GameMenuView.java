@@ -5,6 +5,8 @@
 //-------------------------------------------------------------
 package byu.cit260.view;
 
+import byu.cit260.cityOfAaron.CityOfAaron;
+import byui.cit260.model.Location;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -101,14 +103,18 @@ public class GameMenuView extends MenuView {
     public void moveToANewLocation() {
 
         // Prompt for and get the user’s name.
-        String location;
+        int row;
+        int column;
+        Location locat; 
         System.out.println("\nPlease enter your coordinates: ");
-        location = keyboard.next();
+        row = keyboard.nextInt();
 
         // Display new location description
-        System.out.println("\nCoordinates: " + location
-                + ". In this location"
-                + "...");
+//        System.out.println("\nCoordinates: " + location
+//                + ". In this location"
+//                + "...");
+        locat = CityOfAaron.getTheGame().getMap().getLocation(row, column);
+        
     }
 
     // The manageTheCrops method
