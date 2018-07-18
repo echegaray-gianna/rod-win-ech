@@ -48,7 +48,11 @@ public class GameControl {
         createMap();
 
     }
-    
+    // Position method
+    // Purpose:  set the player's coordinates to 0,0
+    // Parameters: row and column 
+    // Returns: void
+    // =================================== 
     public static void position(int row, int column) {
         Player thePosition = new Player();
         thePosition.setRow(0);
