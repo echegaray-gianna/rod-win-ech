@@ -6,6 +6,7 @@
 package byu.cit260.view;
 
 import byu.cit260.cityOfAaron.CityOfAaron;
+import byui.cit260.model.Game;
 import byui.cit260.model.Location;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -124,7 +125,15 @@ public class GameMenuView extends MenuView {
             // go back to the top of the loop if input was not valid 
         } while (row < 1 || row > max || column < 1 || column > max);
         
-        locat = CityOfAaron.getTheGame().getMap().getLocation(row, column);
+        Game game = CityOfAaron.getTheGame();
+        // get the location
+        locat = game.getMap().getLocation(row, column);
+        
+        // set the players position
+        game.getThePlayer().setColumn(column);
+        game.getThePlayer().setRow(row);
+        
+        // get the description
         position = locat.getDescription();
         
         System.out.println(position);
