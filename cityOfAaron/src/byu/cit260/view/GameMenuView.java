@@ -106,14 +106,16 @@ public class GameMenuView extends MenuView {
         int row;
         int column;
         Location locat; 
-        System.out.println("\nPlease enter your coordinates: ");
+        System.out.println("\nEnter the coordinates of the location you want to move to. \n"
+                + "** The coordinate have to be a number between 1 to 5. \n"
+                + "Enter the x-coordinate: ");
         row = keyboard.nextInt();
+        System.out.println("\nEnter the y-coordinate: ");
+        column = keyboard.nextInt();
+        
 
-        // Display new location description
-//        System.out.println("\nCoordinates: " + location
-//                + ". In this location"
-//                + "...");
         locat = CityOfAaron.getTheGame().getMap().getLocation(row, column);
+        locat.getDescription();
         
     }
 
