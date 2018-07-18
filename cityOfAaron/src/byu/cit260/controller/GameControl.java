@@ -48,6 +48,14 @@ public class GameControl {
         createMap();
 
     }
+    
+    public static void position(int row, int column) {
+        Player thePosition = new Player();
+        thePosition.setRow(0);
+        thePosition.setColumn(0);
+        theGame.setThePlayer(thePosition);
+        
+    }
 
     // create the CropData object
     public static void createCropDataObject() {

@@ -106,6 +106,9 @@ public class GameMenuView extends MenuView {
         int row;
         int column;
         Location locat; 
+        String position;
+        try{
+            
         do{
         System.out.println("\nEnter the coordinates of the location you want to move to. \n"
                 + "** The coordinate have to be a number between 1 to 5. \n"
@@ -118,14 +121,18 @@ public class GameMenuView extends MenuView {
             if (row < 1 || row > max || column < 1 || column > max) {
                 System.out.println("\nOption must be between 1 and " + max);
             }
-            
             // go back to the top of the loop if input was not valid 
         } while (row < 1 || row > max || column < 1 || column > max);
-
-
-        locat = CityOfAaron.getTheGame().getMap().getLocation(row, column);
-        locat.getDescription();
         
+        locat = CityOfAaron.getTheGame().getMap().getLocation(row, column);
+        position = locat.getDescription();
+        
+        System.out.println(position);
+        
+        
+        } catch (Exception e) {
+             System.out.print("An error ocured, sorry!");
+        }    
     }
 
     // The manageTheCrops method
