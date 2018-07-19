@@ -193,9 +193,6 @@ public class CropView {
     // Returns: none
      public static void setOfferingView() {
 
-        // Prompt the user to enter the amount for their tithe.
-        System.out.print("\nWhat percent would you like to give for tithes? ");
-
         //  Get the user’s input and save it.
         int payOffering;
         payOffering = keyboard.nextInt();
