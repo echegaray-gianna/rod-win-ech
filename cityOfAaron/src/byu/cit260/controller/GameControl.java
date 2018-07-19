@@ -164,6 +164,7 @@ public class GameControl {
         theMap.setLocation(1, 2, loc);
 
         //**************************** FARM ******************************
+        
         //**************************** TOWN ******************************
         // define the string for a farm land location
         String town = "\nYou are in a town."
@@ -185,6 +186,7 @@ public class GameControl {
         theMap.setLocation(4, 1, loc);
 
         //**************************** TOWN ******************************
+        
         //**************************** ROAD ******************************
         // define the string for a road location
         String road = "\nYou are on the road."
@@ -199,6 +201,7 @@ public class GameControl {
         }
 
         //**************************** ROAD ******************************
+        
         //**************************** FOREST ******************************
         // define the string for a forest location
         String forest = "\nYou are in the forest."
