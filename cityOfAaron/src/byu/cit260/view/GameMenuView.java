@@ -8,6 +8,7 @@ package byu.cit260.view;
 import byu.cit260.cityOfAaron.CityOfAaron;
 import byui.cit260.model.Game;
 import byui.cit260.model.Location;
+import byui.cit260.model.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -70,14 +71,38 @@ public class GameMenuView extends MenuView {
     }
 
     // The viewTheMap method
-    // Purpose:  add some interest and creativity to the game
+    // Purpose:  displays the map of the village
     // Parameters: none
     // Returns: none
     // =================================== 
     public void viewTheMap() {
-
-        System.out.println("\nView some map options.");
+        // get the map from the game
+        Map theMap = CityOfAaron.getTheGame().getMap();
+        Location loc;
+        // print the header
+        System.out.print("\t***** VILAGE MAP *****\n");
+        System.out.print("      1     2     3     4     5" );
         
+        // iterate through the matrix and output the simbol of each location
+        for(int i = 0; i < 5; i++){
+            int row = i +1;
+            System.out.print("\n " + row + " | ");
+            for(int j = 0; j < 5; j++) {
+                // get the location object of the current row/col
+                loc = theMap.getLocation(i, j);
+                String print = j != 4 ? loc.getSymbol() + " | " : loc.getSymbol() + " |";
+                System.out.print(print);
+            }
+            System.out.print("\n");
+        }
+        
+        // print a discription list of the keys
+        System.out.println("\nKey:");
+        System.out.println("~~~ - River");
+        System.out.println("!!! - Farmland");
+        System.out.println("$$$ - Town");
+        System.out.println("=== - Road");
+        System.out.println("### - Forest");
 
     }
 

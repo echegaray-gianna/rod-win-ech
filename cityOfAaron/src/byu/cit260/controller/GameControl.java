@@ -13,12 +13,10 @@ import java.util.ArrayList;
 import byu.cit260.cityOfAaron.CityOfAaron;
 import byui.cit260.model.*;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class GameControl {
 
@@ -154,9 +152,15 @@ public class GameControl {
         loc = new Location();
         loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("!!!");
-        for (int i = 0; i < MAX_ROW; i++) {
-            theMap.setLocation(i, 0, loc);
-        }
+//        for (int i = 0; i < MAX_ROW; i++) {
+//            theMap.setLocation(i, 0, loc);
+//        }
+        theMap.setLocation(0, 0, loc);
+        theMap.setLocation(0, 1, loc);
+        theMap.setLocation(0, 2, loc);
+        theMap.setLocation(1, 0, loc);
+        theMap.setLocation(1, 1, loc);
+        theMap.setLocation(1, 2, loc);
 
         //**************************** FARM ******************************
         //**************************** TOWN ******************************
@@ -169,9 +173,15 @@ public class GameControl {
         loc = new Location();
         loc.setDescription(town);
         loc.setSymbol("$$$");
-        for (int i = 0; i < MAX_ROW; i++) {
-            theMap.setLocation(i, 1, loc);
-        }
+//        for (int i = 0; i < MAX_ROW; i++) {
+//            theMap.setLocation(i, 1, loc);
+//        }
+        theMap.setLocation(2, 0, loc);
+        theMap.setLocation(3, 0, loc);
+        theMap.setLocation(4, 0, loc);
+        theMap.setLocation(2, 1, loc);
+        theMap.setLocation(3, 1, loc);
+        theMap.setLocation(4, 1, loc);
 
         //**************************** TOWN ******************************
         //**************************** ROAD ******************************
@@ -183,7 +193,7 @@ public class GameControl {
         loc = new Location();
         loc.setDescription(road);
         loc.setSymbol("===");
-        for (int i = 0; i < MAX_ROW; i++) {
+        for (int i = 2; i < MAX_ROW; i++) {
             theMap.setLocation(i, 2, loc);
         }
 
@@ -196,7 +206,7 @@ public class GameControl {
         // set a road location with a hint
         loc = new Location();
         loc.setDescription(forest);
-        loc.setSymbol("^^^");
+        loc.setSymbol("###");
         for (int i = 0; i < MAX_ROW; i++) {
             theMap.setLocation(i, 3, loc);
         }
