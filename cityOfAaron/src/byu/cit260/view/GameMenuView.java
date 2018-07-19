@@ -52,8 +52,14 @@ public class GameMenuView extends MenuView {
             case 2: // viewPrintAlist
                 viewPrintAlist();
                 break;
-            case 3: // moveToANewLocation
+            case 3: {
+            try {
+                // moveToANewLocation
                 moveToANewLocation();
+            } catch (Exception ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 4:{
             try {
@@ -126,9 +132,7 @@ public class GameMenuView extends MenuView {
     // Parameters: none
     // Returns: none
     // =================================== 
-    public void moveToANewLocation() {
-
-        // Prompt for and get the user’s name.
+    public void moveToANewLocation() throws Exception {
         int row;
         int column;
         Location locat; 

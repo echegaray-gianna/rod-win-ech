@@ -44,6 +44,7 @@ public class GameControl {
         createToolList();
         createProvisionsList();
         createMap();
+        position();
 
     }
     // Position method
@@ -51,7 +52,7 @@ public class GameControl {
     // Parameters: row and column 
     // Returns: void
     // =================================== 
-    public static void position(int row, int column) {
+    public static void position() {
         Player thePosition = new Player();
         thePosition.setRow(0);
         thePosition.setColumn(0);
