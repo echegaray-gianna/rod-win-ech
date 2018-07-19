@@ -71,6 +71,7 @@ public class CropView {
         feedPeopleView();
         plantCrops();
         showStarved();
+        setOfferingView();
 
         displayCropsReportView();
     }
@@ -186,35 +187,35 @@ public class CropView {
         CropControl.calcStarved(cropData);
     }
     
-    // The setOfferingView method()
+// The setOfferingView method()
     // Purpose: allows the user to set how much they want to pay in tithes.
     // Parameters: none
     // Returns: none
-//     public static void setOfferingView() {
-//
-//        // Prompt the user to enter the amount for their tithe.
-//        System.out.print("\nWhat percent would you like to give for tithes? ");
-//
-//        //  Get the user’s input and save it.
-//        int payOffering;
-//        payOffering = keyboard.nextInt();
-//        boolean paramsNotOkay;
-//        do {
-//            paramsNotOkay = false;
-//            System.out.println("\nHow much would you like to give in tithes in percent?");
-//            payOffering = keyboard.nextInt();
-//
-//            try {
-//                
-//                // Call the setOffering( ) method in the control layer to set the offering. 
-//                CropControl.setOffering(payOffering, cropData);
-//           } 
-//            catch (Exception e) {
-//                System.out.println("I am sorry master, I cannot do this.");
-//                System.out.println(e.getMessage());
-//                paramsNotOkay = true;
-//            }
-//        } while (paramsNotOkay);
-//
-//    }
+     public static void setOfferingView() {
+
+        // Prompt the user to enter the amount for their tithe.
+        System.out.print("\nWhat percent would you like to give for tithes? ");
+
+        //  Get the user’s input and save it.
+        int payOffering;
+        payOffering = keyboard.nextInt();
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+            System.out.println("\nHow much would you like to give in tithes in percent?");
+            payOffering = keyboard.nextInt();
+
+            try {
+                
+                // Call the setOffering( ) method in the control layer to set the offering. 
+                CropControl.setOffering(payOffering, cropData);
+           } 
+            catch (Exception e) {
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        } while (paramsNotOkay);
+
+    }
   }
