@@ -44,6 +44,7 @@ public class GameControl {
         createToolList();
         createProvisionsList();
         createMap();
+        position();
 
     }
     // Position method
@@ -51,7 +52,7 @@ public class GameControl {
     // Parameters: row and column 
     // Returns: void
     // =================================== 
-    public static void position(int row, int column) {
+    public static void position() {
         Player thePosition = new Player();
         thePosition.setRow(0);
         thePosition.setColumn(0);
@@ -163,6 +164,7 @@ public class GameControl {
         theMap.setLocation(1, 2, loc);
 
         //**************************** FARM ******************************
+        
         //**************************** TOWN ******************************
         // define the string for a farm land location
         String town = "\nYou are in a town."
@@ -184,6 +186,7 @@ public class GameControl {
         theMap.setLocation(4, 1, loc);
 
         //**************************** TOWN ******************************
+        
         //**************************** ROAD ******************************
         // define the string for a road location
         String road = "\nYou are on the road."
@@ -198,6 +201,7 @@ public class GameControl {
         }
 
         //**************************** ROAD ******************************
+        
         //**************************** FOREST ******************************
         // define the string for a forest location
         String forest = "\nYou are in the forest."

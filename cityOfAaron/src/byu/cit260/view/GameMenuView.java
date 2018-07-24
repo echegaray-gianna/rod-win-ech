@@ -52,8 +52,14 @@ public class GameMenuView extends MenuView {
             case 2: // viewPrintAlist
                 viewPrintAlist();
                 break;
-            case 3: // moveToANewLocation
+            case 3: {
+            try {
+                // moveToANewLocation
                 moveToANewLocation();
+            } catch (Exception ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 4:{
             try {
@@ -126,29 +132,28 @@ public class GameMenuView extends MenuView {
     // Parameters: none
     // Returns: none
     // =================================== 
-    public void moveToANewLocation() {
-
-        // Prompt for and get the user’s name.
+    public void moveToANewLocation() throws Exception {
         int row;
         int column;
         Location locat; 
         String position;
+        
         try{
             
         do{
         System.out.println("\nEnter the coordinates of the location you want to move to. \n"
                 + "** The coordinate have to be a number between 1 to 5. \n"
                 + "\nEnter the x-coordinate: ");
-        row = keyboard.nextInt();
+        row = keyboard.nextInt() -1;
         System.out.println("\nEnter the y-coordinate: ");
-        column = keyboard.nextInt();
+        column = keyboard.nextInt() -1;
 
             // if it is not a valid value, output an error message
-            if (row < 1 || row > max || column < 1 || column > max) {
-                System.out.println("\nOption must be between 1 and " + max);
+            if (row < 0 || row > 4 || column < 0 || column > 4) {
+                System.out.println("\nOption must be between 1 and 5");
             }
             // go back to the top of the loop if input was not valid 
-        } while (row < 1 || row > max || column < 1 || column > max);
+        } while (row < 0 || row > 4 || column < 0 || column > 4);
         
         Game game = CityOfAaron.getTheGame();
         // get the location
@@ -165,7 +170,7 @@ public class GameMenuView extends MenuView {
         
         
         } catch (Exception e) {
-             System.out.print("An error ocured, sorry!");
+             System.out.print("An error ocured, sorry! Try again");
         }    
     }
 
